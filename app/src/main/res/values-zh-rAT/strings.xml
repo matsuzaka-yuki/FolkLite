@@ -335,4 +335,11 @@
     <string name="apm_mount_warning_button">我已知悉</string>
     <string name="kpm_autoload_do_not_show_again">不再显示</string>
     <string name="kpm_autoload_first_time_confirm">知道了</string>
+    <!-- Visual Effects -->
+    <string name="settings_enable_blur">启用圣光迷雾</string>
+    <string name="settings_enable_blur_summary">为圣域顶栏和导航栏添加迷雾效果</string>
+    <string name="settings_floating_bottom_bar">悬浮圣光底栏</string>
+    <string name="settings_floating_bottom_bar_summary">使用悬浮圣核样式的圣域导航栏</string>
+    <string name="settings_enable_liquid_glass">液态圣镜</string>
+    <string name="settings_enable_liquid_glass_summary">为悬浮圣光底栏添加圣镜效果</string>
 </resources>

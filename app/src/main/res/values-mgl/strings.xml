@@ -336,4 +336,10 @@
     <string name="apm_mount_warning_button">我已知悉</string>
     <string name="kpm_autoload_do_not_show_again">不再显示</string>
     <string name="kpm_autoload_first_time_confirm">知道了</string>
+    <string name="settings_enable_blur">Enable blur</string>
+    <string name="settings_enable_blur_summary">Blur effect for top bar and navigation bar</string>
+    <string name="settings_floating_bottom_bar">Floating bottom bar</string>
+    <string name="settings_floating_bottom_bar_summary">Use a floating capsule-style navigation bar</string>
+    <string name="settings_enable_liquid_glass">Liquid glass</string>
+    <string name="settings_enable_liquid_glass_summary">Glass effects for floating bottom bar</string>
 </resources>

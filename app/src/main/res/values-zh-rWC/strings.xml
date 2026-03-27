@@ -331,4 +331,11 @@
     <string name="apm_mount_warning_button">我已知悉</string>
     <string name="kpm_autoload_do_not_show_again">不再显示</string>
     <string name="kpm_autoload_first_time_confirm">知道了</string>
+    <!-- Visual Effects -->
+    <string name="settings_enable_blur">启用迷雾幻境</string>
+    <string name="settings_enable_blur_summary">为天穹与仙域导航阵法施加迷雾幻化之效</string>
+    <string name="settings_floating_bottom_bar">悬浮仙舟底栏</string>
+    <string name="settings_floating_bottom_bar_summary">使用悬浮仙丹样式的仙域导航阵法</string>
+    <string name="settings_enable_liquid_glass">琉璃仙镜</string>
+    <string name="settings_enable_liquid_glass_summary">为悬浮仙舟底栏施加琉璃仙镜之效</string>
 </resources>

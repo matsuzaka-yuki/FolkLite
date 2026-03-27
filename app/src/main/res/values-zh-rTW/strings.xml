@@ -299,4 +299,11 @@
     <string name="apm_mount_warning_button">我知道了</string>
     <string name="kpm_autoload_do_not_show_again">不要再顯示</string>
     <string name="kpm_autoload_first_time_confirm">知道了</string>
+    <!-- Visual Effects -->
+    <string name="settings_enable_blur">啟用模糊</string>
+    <string name="settings_enable_blur_summary">為頂欄和導航欄添加模糊效果</string>
+    <string name="settings_floating_bottom_bar">懸浮底欄</string>
+    <string name="settings_floating_bottom_bar_summary">使用懸浮膠囊樣式的導航欄</string>
+    <string name="settings_enable_liquid_glass">液態玻璃</string>
+    <string name="settings_enable_liquid_glass_summary">為懸浮底欄添加玻璃效果</string>
 </resources>

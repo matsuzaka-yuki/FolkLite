@@ -4,11 +4,13 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -64,6 +66,7 @@ import me.bmax.apatch.util.rootShellForResult
 import me.bmax.apatch.util.setGlobalNamespaceEnabled
 import me.bmax.apatch.util.setHideServiceEnabled
 import me.bmax.apatch.util.setMagicMountEnabled
+import me.bmax.apatch.util.VisualConfig
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
@@ -395,6 +398,54 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                             themeMode = index
                         }
                     )
+
+                    // Blur (only on API 33+)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        var enableBlur by rememberSaveable {
+                            mutableStateOf(VisualConfig.enableBlur)
+                        }
+                        SuperSwitch(
+                            title = stringResource(id = R.string.settings_enable_blur),
+                            summary = stringResource(id = R.string.settings_enable_blur_summary),
+                            checked = enableBlur,
+                            onCheckedChange = {
+                                VisualConfig.enableBlur = it
+                                enableBlur = VisualConfig.enableBlur
+                            }
+                        )
+                    }
+
+                    // Floating Bottom Bar
+                    var enableFloatingBottomBar by rememberSaveable {
+                        mutableStateOf(VisualConfig.enableFloatingBottomBar)
+                    }
+                    SuperSwitch(
+                        title = stringResource(id = R.string.settings_floating_bottom_bar),
+                        summary = stringResource(id = R.string.settings_floating_bottom_bar_summary),
+                        checked = enableFloatingBottomBar,
+                        onCheckedChange = {
+                            VisualConfig.enableFloatingBottomBar = it
+                            enableFloatingBottomBar = it
+                        }
+                    )
+
+                    // Liquid Glass (only when floating bar is ON and API 33+)
+                    AnimatedVisibility(
+                        visible = enableFloatingBottomBar && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                    ) {
+                        var enableLiquidGlass by rememberSaveable {
+                            mutableStateOf(VisualConfig.enableLiquidGlass)
+                        }
+                        SuperSwitch(
+                            title = stringResource(id = R.string.settings_enable_liquid_glass),
+                            summary = stringResource(id = R.string.settings_enable_liquid_glass_summary),
+                            checked = enableLiquidGlass,
+                            onCheckedChange = {
+                                VisualConfig.enableLiquidGlass = it
+                                enableLiquidGlass = VisualConfig.enableLiquidGlass
+                            }
+                        )
+                    }
 
                     // Home Layout
                     val homeLayoutItems = listOf(

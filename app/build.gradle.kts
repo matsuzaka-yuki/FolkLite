@@ -443,6 +443,12 @@ dependencies {
 
     implementation(libs.capsule)
 
+    // Haze (blur effects)
+    implementation(libs.haze)
+
+    // Backdrop (liquid glass)
+    implementation(libs.backdrop)
+
     compileOnly(libs.cxx)
 }
 
