@@ -17,3 +17,5 @@ app/src/main/resources/
 private
 build.py
 .claude
+app/src/main/assets/Service
+demo

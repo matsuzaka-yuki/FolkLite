@@ -268,6 +268,21 @@
     <string name="crash_handle_copied">クラッシュログをクリップボードにコピーしました。</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">内蔵のモジュールマウントシステムを有効化します。</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">Bootloader Unlock 状態をある程度非表示にします。</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">起動時に自動アンマウントするマウントポイントを構成します。</string>
+    <string name="umount_config_title">アンマウントの構成</string>
+    <string name="umount_config_enabled">アンマウントを有効化</string>
+    <string name="umount_config_enabled_summary">起動時に指定したマウントポイントを自動でアンマウントします。</string>
+    <string name="umount_config_paths_label">マウントポイントのパス (1 行に 1 つ)</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">アンマウントするには、1 行につき 1 つのマウントポイントパスを入力</string>
+    <string name="umount_config_save">保存</string>
+    <string name="umount_config_save_confirm">構成を保存を確認しますか？</string>
+    <string name="umount_config_save_success">構成の保存に成功しました。</string>
+    <string name="umount_config_save_failed">構成の保存に失敗しました。</string>
     <string name="online_apm_module_title">オンライン AP モジュール</string>
     <string name="online_kpm_module_title">オンライン KP モジュール</string>
     <string name="online_module_search_hint">モジュールを検索...</string>

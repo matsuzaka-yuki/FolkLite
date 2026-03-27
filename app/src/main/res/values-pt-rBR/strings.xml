@@ -241,6 +241,21 @@
     <string name="go_to_github">Ir para Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Ativar o sistema de montagem de módulos integrado</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">Ocultar o status de desbloqueio do bootloader em certa medida</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">Configurar pontos de montagem para desmontar automaticamente na inicialização</string>
+    <string name="umount_config_title">Configuração do Umount</string>
+    <string name="umount_config_enabled">Ativar Umount</string>
+    <string name="umount_config_enabled_summary">Desmontar automaticamente pontos de montagem especificados na inicialização</string>
+    <string name="umount_config_paths_label">Caminhos dos pontos de montagem (um por linha)</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">Insira um caminho de ponto de montagem por linha para desmontar</string>
+    <string name="umount_config_save">Salvar</string>
+    <string name="umount_config_save_confirm">Confirmar salvar configuração?</string>
+    <string name="umount_config_save_success">Configuração salva com sucesso</string>
+    <string name="umount_config_save_failed">Falha ao salvar configuração</string>
     <string name="online_apm_module_title">Online APM Modules</string>
     <string name="online_kpm_module_title">Online KPM Modules</string>
     <string name="online_module_search_hint">Search modules...</string>

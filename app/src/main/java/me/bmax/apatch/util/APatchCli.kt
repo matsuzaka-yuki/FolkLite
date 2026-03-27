@@ -291,6 +291,108 @@ fun setMagicMountEnabled(enable: Boolean) {
         }
 }
 
+fun isHideServiceEnabled(): Boolean {
+    val hideService = SuFile(APApplication.HIDE_SERVICE_FILE)
+    hideService.shell = getRootShell()
+    return hideService.exists()
+}
+
+fun setHideServiceEnabled(enable: Boolean) {
+    val shell = getRootShell()
+    shell.newJob().add("${if (enable) "touch" else "rm -rf"} ${APApplication.HIDE_SERVICE_FILE}")
+        .submit { result ->
+            Log.i(TAG, "setHideServiceEnabled result: ${result.isSuccess} [${result.out}]")
+        }
+    if (enable) {
+        executeHideBinary()
+    }
+}
+
+fun executeHideBinary(): Boolean {
+    val shell = getRootShell()
+    val context = apApp.applicationContext
+
+    shell.newJob().add("mkdir -p /data/adb/fp").exec()
+
+    try {
+        val hideAsset = context.assets.open("Service/Hide")
+        val tempFile = File(context.cacheDir, "hide_temp")
+        tempFile.outputStream().use { output ->
+            hideAsset.copyTo(output)
+        }
+        hideAsset.close()
+
+        val cmds = arrayOf(
+            "cp ${tempFile.absolutePath} ${APApplication.HIDE_BINARY_PATH}",
+            "chmod 755 ${APApplication.HIDE_BINARY_PATH}",
+            "restorecon ${APApplication.HIDE_BINARY_PATH}",
+            APApplication.HIDE_BINARY_PATH
+        )
+
+        val result = shell.newJob().add(*cmds).exec()
+        tempFile.delete()
+
+        Log.i(TAG, "executeHideBinary result: ${result.isSuccess} [${result.out}]")
+        return result.isSuccess
+    } catch (e: Exception) {
+        Log.e(TAG, "executeHideBinary failed: ${e.message}", e)
+        return false
+    }
+}
+
+fun isUmountServiceEnabled(): Boolean {
+    val umountService = SuFile(APApplication.UMOUNT_SERVICE_FILE)
+    umountService.shell = getRootShell()
+    return umountService.exists()
+}
+
+fun setUmountServiceEnabled(enabled: Boolean): Boolean {
+    val shell = getRootShell()
+    val result = if (enabled) {
+        shell.newJob().add("touch ${APApplication.UMOUNT_SERVICE_FILE}").exec().isSuccess
+    } else {
+        shell.newJob().add("rm -rf ${APApplication.UMOUNT_SERVICE_FILE}").exec().isSuccess
+    }
+
+    if (enabled) {
+        executeUmountBinary()
+    }
+
+    return result
+}
+
+fun executeUmountBinary(): Boolean {
+    val shell = getRootShell()
+    val context = apApp.applicationContext
+
+    shell.newJob().add("mkdir -p /data/adb/fp").exec()
+
+    try {
+        val umountAsset = context.assets.open("Service/Umount")
+        val tempFile = File(context.cacheDir, "umount_temp")
+        tempFile.outputStream().use { output ->
+            umountAsset.copyTo(output)
+        }
+        umountAsset.close()
+
+        val cmds = arrayOf(
+            "cp ${tempFile.absolutePath} ${APApplication.UMOUNT_BINARY_PATH}",
+            "chmod 755 ${APApplication.UMOUNT_BINARY_PATH}",
+            "restorecon ${APApplication.UMOUNT_BINARY_PATH}",
+            APApplication.UMOUNT_BINARY_PATH
+        )
+
+        val result = shell.newJob().add(*cmds).exec()
+        tempFile.delete()
+
+        Log.i(TAG, "executeUmountBinary result: ${result.isSuccess} [${result.out}]")
+        return result.isSuccess
+    } catch (e: Exception) {
+        Log.e(TAG, "executeUmountBinary failed: ${e.message}", e)
+        return false
+    }
+}
+
 fun getFileNameFromUri(context: Context, uri: Uri): String? {
     var fileName: String? = null
     val contentResolver: ContentResolver = context.contentResolver

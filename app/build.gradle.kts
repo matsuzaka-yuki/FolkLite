@@ -261,7 +261,98 @@ tasks.getByName("preBuild").dependsOn(
     "downloadKptools",
     "downloadCompatKpatch",
     "mergeScripts",
+    "buildHideArm64",
+    "buildUmountArm64",
 )
+
+// Build Hide.zig for arm64
+tasks.register<Exec>("buildHideArm64") {
+    val zigExe = System.getenv("ZIG_EXE")?.let { File(it) }
+        ?: localProperties.getProperty("zig.dir")?.let { zigDir ->
+            if (System.getProperty("os.name").lowercase().contains("win")) {
+                File(zigDir, "zig.exe")
+            } else {
+                File(zigDir, "zig")
+            }
+        }
+        ?: if (System.getProperty("os.name").lowercase().contains("win")) {
+            File("E:\\bin\\zig", "zig.exe")
+        } else {
+            File("zig")
+        }
+
+    val sourceFile = rootProject.file("FolkS/Hide.zig")
+    val outputFile = file("src/main/assets/Service/Hide")
+    val umountFile = file("src/main/assets/Service/Umount")
+
+    onlyIf {
+        !(outputFile.exists() && umountFile.exists()) && (!outputFile.exists() || sourceFile.lastModified() > outputFile.lastModified())
+    }
+
+    doFirst {
+        outputFile.parentFile.mkdirs()
+        println("Building Hide.zig for arm64 with Zig...")
+        println("Zig: ${zigExe.absolutePath}")
+    }
+
+    commandLine(
+        zigExe.absolutePath,
+        "build-exe",
+        "-target", "aarch64-linux-android",
+        "-O", "ReleaseSmall",
+        "-static",
+        sourceFile.absolutePath,
+        "-femit-bin=${outputFile.absolutePath}"
+    )
+
+    doLast {
+        println("Hide binary built: ${outputFile.absolutePath}")
+    }
+}
+
+// Build Umount.zig for arm64
+tasks.register<Exec>("buildUmountArm64") {
+    val zigExe = System.getenv("ZIG_EXE")?.let { File(it) }
+        ?: localProperties.getProperty("zig.dir")?.let { zigDir ->
+            if (System.getProperty("os.name").lowercase().contains("win")) {
+                File(zigDir, "zig.exe")
+            } else {
+                File(zigDir, "zig")
+            }
+        }
+        ?: if (System.getProperty("os.name").lowercase().contains("win")) {
+            File("E:\\bin\\zig", "zig.exe")
+        } else {
+            File("zig")
+        }
+
+    val sourceFile = rootProject.file("FolkS/Umount.zig")
+    val outputFile = file("src/main/assets/Service/Umount")
+    val hideFile = file("src/main/assets/Service/Hide")
+
+    onlyIf {
+        !(outputFile.exists() && hideFile.exists()) && (!outputFile.exists() || sourceFile.lastModified() > outputFile.lastModified())
+    }
+
+    doFirst {
+        outputFile.parentFile.mkdirs()
+        println("Building Umount.zig for arm64 with Zig...")
+    }
+
+    commandLine(
+        zigExe.absolutePath,
+        "build-exe",
+        "-target", "aarch64-linux-android",
+        "-O", "ReleaseSmall",
+        "-static",
+        sourceFile.absolutePath,
+        "-femit-bin=${outputFile.absolutePath}"
+    )
+
+    doLast {
+        println("Umount binary built: ${outputFile.absolutePath}")
+    }
+}
 
 // https://github.com/bbqsrc/cargo-ndk
 // cargo ndk -t arm64-v8a build --release

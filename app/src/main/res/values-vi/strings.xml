@@ -241,6 +241,21 @@
     <string name="go_to_github">Đi đến Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Bật hệ thống gắn kết mô-đun được tích hợp sẵn</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">Ẩn trạng thái mở khóa bootloader ở một mức độ nhất định</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">Cấu hình điểm mount để tự động unmount khi khởi động</string>
+    <string name="umount_config_title">Cấu hình Umount</string>
+    <string name="umount_config_enabled">Bật Umount</string>
+    <string name="umount_config_enabled_summary">Tự động unmount các điểm mount đã chỉ định khi khởi động</string>
+    <string name="umount_config_paths_label">Đường dẫn điểm mount (mỗi dòng một cái)</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">Nhập một đường dẫn điểm mount để unmount trên mỗi dòng</string>
+    <string name="umount_config_save">Lưu</string>
+    <string name="umount_config_save_confirm">Xác nhận lưu cấu hình?</string>
+    <string name="umount_config_save_success">Lưu cấu hình thành công</string>
+    <string name="umount_config_save_failed">Lưu cấu hình thất bại</string>
     <string name="online_apm_module_title">Online APM Modules</string>
     <string name="online_kpm_module_title">Online KPM Modules</string>
     <string name="online_module_search_hint">Search modules...</string>

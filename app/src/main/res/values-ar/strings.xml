@@ -238,6 +238,21 @@
     <string name="go_to_github">الذهاب إلى Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">تمكين نظام تحميل الوحدات المدمج</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">إخفاء حالة فتح قفل محمل الإقلاع إلى حد ما</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">تكوين نقاط التثبيت للإلغاء التلقائي عند التشغيل</string>
+    <string name="umount_config_title">تكوين Umount</string>
+    <string name="umount_config_enabled">تفعيل Umount</string>
+    <string name="umount_config_enabled_summary">الإلغاء التلقائي لنقاط التثبيت المحددة عند التشغيل</string>
+    <string name="umount_config_paths_label">مسارات نقاط التثبيت (واحد في كل سطر)</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">أدخل مسار نقطة تثبيت واحد في كل سطر لإلغاء التثبيت</string>
+    <string name="umount_config_save">حفظ</string>
+    <string name="umount_config_save_confirm">تأكيد حفظ التكوين؟</string>
+    <string name="umount_config_save_success">تم حفظ التكوين بنجاح</string>
+    <string name="umount_config_save_failed">فشل حفظ التكوين</string>
     <string name="settings_apm_install_confirm">تأكيد قبل التثبيت</string>
     <string name="settings_apm_install_confirm_summary">إظهار مربع حوار تأكيد قبل تثبيت الوحدات</string>
     <string name="apm_install_confirm_title">تثبيت الوحدة</string>

@@ -237,6 +237,21 @@
     <string name="go_to_github">前往 Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">啟用內建的模組掛載系統</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">一定程度上隱藏Bootloader解鎖狀態</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">配置開機自動卸載的掛載點</string>
+    <string name="umount_config_title">Umount 配置</string>
+    <string name="umount_config_enabled">啟用 Umount</string>
+    <string name="umount_config_enabled_summary">開機自動卸載指定掛載點</string>
+    <string name="umount_config_paths_label">掛載點路徑（每行一個）</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">每行輸入一個需要卸載的掛載點路徑</string>
+    <string name="umount_config_save">儲存</string>
+    <string name="umount_config_save_confirm">確認儲存配置？</string>
+    <string name="umount_config_save_success">配置儲存成功</string>
+    <string name="umount_config_save_failed">配置儲存失敗</string>
     <string name="online_apm_module_title">線上 APM 模組</string>
     <string name="online_kpm_module_title">線上 KPM 模組</string>
     <string name="online_module_search_hint">搜尋模組...</string>

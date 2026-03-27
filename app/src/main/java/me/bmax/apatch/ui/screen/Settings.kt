@@ -41,6 +41,7 @@ import androidx.core.os.LocaleListCompat
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.generated.destinations.NavigationLayoutScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.UmountConfigScreenDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -56,10 +57,12 @@ import me.bmax.apatch.util.APatchKeyHelper
 import me.bmax.apatch.util.DPIUtils
 import me.bmax.apatch.util.getBugreportFile
 import me.bmax.apatch.util.isGlobalNamespaceEnabled
+import me.bmax.apatch.util.isHideServiceEnabled
 import me.bmax.apatch.util.isMagicMountEnabled
 import me.bmax.apatch.util.outputStream
 import me.bmax.apatch.util.rootShellForResult
 import me.bmax.apatch.util.setGlobalNamespaceEnabled
+import me.bmax.apatch.util.setHideServiceEnabled
 import me.bmax.apatch.util.setMagicMountEnabled
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -92,12 +95,16 @@ fun SettingScreen(navigator: DestinationsNavigator) {
     var isMagicMountEnabled by rememberSaveable {
         mutableStateOf(false)
     }
+    var isHideServiceEnabled by rememberSaveable {
+        mutableStateOf(false)
+    }
     var bSkipStoreSuperKey by rememberSaveable {
         mutableStateOf(APatchKeyHelper.shouldSkipStoreSuperKey())
     }
     if (kPatchReady && aPatchReady) {
         isGlobalNamespaceEnabled = isGlobalNamespaceEnabled()
         isMagicMountEnabled = isMagicMountEnabled()
+        isHideServiceEnabled = isHideServiceEnabled()
     }
 
     val showResetSuPathDialog = remember { mutableStateOf(false) }
@@ -245,6 +252,30 @@ fun SettingScreen(navigator: DestinationsNavigator) {
                             onCheckedChange = {
                                 setMagicMountEnabled(it)
                                 isMagicMountEnabled = it
+                            }
+                        )
+                    }
+
+                    // FolkPatch Hide
+                    if (kPatchReady && aPatchReady) {
+                        SuperSwitch(
+                            title = stringResource(id = R.string.settings_hide_service),
+                            summary = stringResource(id = R.string.settings_hide_service_summary),
+                            checked = isHideServiceEnabled,
+                            onCheckedChange = {
+                                setHideServiceEnabled(it)
+                                isHideServiceEnabled = it
+                            }
+                        )
+                    }
+
+                    // Zig Umount
+                    if (kPatchReady && aPatchReady) {
+                        SuperArrow(
+                            title = stringResource(id = R.string.settings_umount_service),
+                            summary = stringResource(id = R.string.settings_umount_service_summary),
+                            onClick = {
+                                navigator.navigate(UmountConfigScreenDestination)
                             }
                         )
                     }

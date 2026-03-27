@@ -266,6 +266,21 @@
     <string name="settings_force_overlayfs_mode_summary">在内核支持可用时用 OverlayFS 而非 Magic Mount 来挂载系统模块，需要重启生效。</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">启用内置的模块挂载系统</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">一定程度上隐藏Bootloader锁解锁状态</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">配置开机自动卸载的挂载点</string>
+    <string name="umount_config_title">Umount 配置</string>
+    <string name="umount_config_enabled">启用 Umount</string>
+    <string name="umount_config_enabled_summary">开机自动卸载指定挂载点</string>
+    <string name="umount_config_paths_label">挂载点路径（每行一个）</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">每行输入一个需要卸载的挂载点路径</string>
+    <string name="umount_config_save">保存</string>
+    <string name="umount_config_save_confirm">确认保存配置？</string>
+    <string name="umount_config_save_success">配置保存成功</string>
+    <string name="umount_config_save_failed">配置保存失败</string>
     <string name="online_apm_module_title">在线 APM 模块</string>
     <string name="online_kpm_module_title">在线 KPM 模块</string>
     <string name="online_module_search_hint">搜索模块...</string>

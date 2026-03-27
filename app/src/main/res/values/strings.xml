@@ -311,6 +311,21 @@
     <string name="crash_handle_copied">Crash log copied to clipboard.</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Enable the built-in module mounting system</string>
+    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service_summary">Hide Bootloader unlock status to some extent</string>
+    <!-- Umount Service -->
+    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service_summary">Configure mount points to auto-unmount at boot</string>
+    <string name="umount_config_title">Umount Configuration</string>
+    <string name="umount_config_enabled">Enable Umount</string>
+    <string name="umount_config_enabled_summary">Auto-unmount specified mount points at boot</string>
+    <string name="umount_config_paths_label">Mount Point Paths (one per line)</string>
+    <string name="umount_config_paths_placeholder">/system/vendor/app\n/system/vendor/priv-app</string>
+    <string name="umount_config_paths_helper">Enter one mount point path per line to unmount</string>
+    <string name="umount_config_save">Save</string>
+    <string name="umount_config_save_confirm">Confirm save configuration?</string>
+    <string name="umount_config_save_success">Configuration saved successfully</string>
+    <string name="umount_config_save_failed">Failed to save configuration</string>
     <string name="online_apm_module_title">Online APM Modules</string>
     <string name="online_kpm_module_title">Online KPM Modules</string>
     <string name="online_module_search_hint">Search modules...</string>
