@@ -112,11 +112,15 @@ android {
 
         externalNativeBuild {
             cmake {
-                cppFlags += listOf(
-                    "-DAPI_TOKEN=\"$token\"", 
-                    "-DAPP_SIGNATURE_HASH=\"$signatureHash\"",
-                    "-DAPP_PACKAGE_NAME=\"$applicationId\""
-                )
+                val nativeFlags = mutableListOf<String>()
+                if (token.isNotEmpty()) {
+                    nativeFlags += "-DAPI_TOKEN=\"$token\""
+                }
+                if (signatureHash.isNotEmpty()) {
+                    nativeFlags += "-DAPP_SIGNATURE_HASH=\"$signatureHash\""
+                }
+                nativeFlags += "-DAPP_PACKAGE_NAME=\"$applicationId\""
+                cppFlags += nativeFlags
             }
         }
 
