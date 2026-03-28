@@ -29,6 +29,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -50,6 +51,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocal
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -122,7 +124,41 @@ import top.yukonga.miuix.kmp.basic.NavigationItem
 import top.yukonga.miuix.kmp.basic.Scaffold
 import top.yukonga.miuix.kmp.basic.Text
 import top.yukonga.miuix.kmp.theme.MiuixTheme
+import kotlin.math.PI
 import kotlin.math.abs
+import kotlin.math.cos
+import kotlin.math.exp
+import kotlin.math.sin
+import kotlin.math.sqrt
+
+@Immutable
+private class NavTransitionEasing(
+    response: Float,
+    damping: Float,
+) : Easing {
+    private val r: Float
+    private val w: Float
+    private val c2: Float
+
+    init {
+        val omega = 2.0 * PI / response
+        val k = omega * omega
+        val c = damping * 4.0 * PI / response
+        w = (sqrt(4.0 * k - c * c) / 2.0).toFloat()
+        r = (-c / 2.0).toFloat()
+        c2 = r / w
+    }
+
+    override fun transform(fraction: Float): Float {
+        val t = fraction.toDouble()
+        val decay = exp(r * t)
+        return (decay * (-cos(w * t) + c2 * sin(w * t)) + 1.0).toFloat()
+    }
+}
+
+private val NavAnimationEasing = NavTransitionEasing(0.8f, 0.95f)
+
+private fun <T> navTween() = tween<T>(durationMillis = 500, easing = NavAnimationEasing)
 
 class MainActivity : AppCompatActivity() {
 
@@ -400,21 +436,21 @@ class MainActivity : AppCompatActivity() {
                                             if (targetIndex > initialIndex) {
                                                 slideInHorizontally(
                                                     initialOffsetX = { it },
-                                                    animationSpec = tween(300)
-                                                ) + fadeIn(animationSpec = tween(300))
+                                                    animationSpec = navTween()
+                                                ) + fadeIn(animationSpec = navTween())
                                             } else {
                                                 slideInHorizontally(
                                                     initialOffsetX = { -it },
-                                                    animationSpec = tween(300)
-                                                ) + fadeIn(animationSpec = tween(300))
+                                                    animationSpec = navTween()
+                                                ) + fadeIn(animationSpec = navTween())
                                             }
                                         } else if (targetState.destination.route !in bottomBarRoutes) {
                                             slideInHorizontally(
                                                 initialOffsetX = { it },
-                                                animationSpec = tween(300)
+                                                animationSpec = navTween()
                                             )
                                         } else {
-                                            fadeIn(animationSpec = tween(300))
+                                            fadeIn(animationSpec = navTween())
                                         }
                                     }
 
@@ -437,23 +473,23 @@ class MainActivity : AppCompatActivity() {
                                             if (targetIndex > initialIndex) {
                                                 slideOutHorizontally(
                                                     targetOffsetX = { -it },
-                                                    animationSpec = tween(300)
-                                                ) + fadeOut(animationSpec = tween(300))
+                                                    animationSpec = navTween()
+                                                ) + fadeOut(animationSpec = navTween())
                                             } else {
                                                 slideOutHorizontally(
                                                     targetOffsetX = { it },
-                                                    animationSpec = tween(300)
-                                                ) + fadeOut(animationSpec = tween(300))
+                                                    animationSpec = navTween()
+                                                ) + fadeOut(animationSpec = navTween())
                                             }
                                         } else if (initialState.destination.route in bottomBarRoutes &&
                                             targetState.destination.route !in bottomBarRoutes
                                         ) {
                                             slideOutHorizontally(
                                                 targetOffsetX = { -it / 4 },
-                                                animationSpec = tween(300)
-                                            ) + fadeOut(animationSpec = tween(300))
+                                                animationSpec = navTween()
+                                            ) + fadeOut(animationSpec = navTween())
                                         } else {
-                                            fadeOut(animationSpec = tween(300))
+                                            fadeOut(animationSpec = navTween())
                                         }
                                     }
 
@@ -462,10 +498,10 @@ class MainActivity : AppCompatActivity() {
                                         if (targetState.destination.route in bottomBarRoutes) {
                                             slideInHorizontally(
                                                 initialOffsetX = { -it / 4 },
-                                                animationSpec = tween(300)
-                                            ) + fadeIn(animationSpec = tween(300))
+                                                animationSpec = navTween()
+                                            ) + fadeIn(animationSpec = navTween())
                                         } else {
-                                            fadeIn(animationSpec = tween(300))
+                                            fadeIn(animationSpec = navTween())
                                         }
                                     }
 
@@ -474,10 +510,10 @@ class MainActivity : AppCompatActivity() {
                                         if (initialState.destination.route !in bottomBarRoutes) {
                                             slideOutHorizontally(
                                                 targetOffsetX = { it },
-                                                animationSpec = tween(300)
-                                            ) + fadeOut(animationSpec = tween(300))
+                                                animationSpec = navTween()
+                                            ) + fadeOut(animationSpec = navTween())
                                         } else {
-                                            fadeOut(animationSpec = tween(300))
+                                            fadeOut(animationSpec = navTween())
                                         }
                                     }
                             }
