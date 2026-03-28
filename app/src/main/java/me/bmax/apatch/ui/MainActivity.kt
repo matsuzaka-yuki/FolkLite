@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
@@ -30,11 +31,11 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.AnimatedContentTransitionScope
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.Easing
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -413,12 +414,13 @@ class MainActivity : AppCompatActivity() {
                     Scaffold(
                         containerColor = MiuixTheme.colorScheme.surface,
                         bottomBar = {
-                            if (showBottomBar && enableFloatingBottomBar) {
-                                AnimatedVisibility(
-                                    visible = true,
-                                    enter = slideInVertically(initialOffsetY = { it }) + fadeIn(),
-                                    exit = slideOutVertically(targetOffsetY = { it }) + fadeOut()
-                                ) {
+                            if (enableFloatingBottomBar) {
+                                val animatedOffsetY by animateDpAsState(
+                                    targetValue = if (showBottomBar) 0.dp else 200.dp,
+                                    animationSpec = tween(durationMillis = 300),
+                                    label = "floatingBarOffset"
+                                )
+                                Box(modifier = Modifier.offset(y = animatedOffsetY)) {
                                     BottomBar(
                                         mainPagerState = mainPagerState,
                                         enableBlur = enableBlur,
@@ -430,7 +432,7 @@ class MainActivity : AppCompatActivity() {
                                         onUserInteraction = { resetBottomBarAutoHide() },
                                     )
                                 }
-                            } else if (showBottomBar && !enableFloatingBottomBar) {
+                            } else if (showBottomBar) {
                                 BottomBar(
                                     mainPagerState = mainPagerState,
                                     enableBlur = enableBlur,
