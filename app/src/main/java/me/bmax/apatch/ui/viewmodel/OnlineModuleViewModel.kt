@@ -18,7 +18,7 @@ class OnlineModuleViewModel(
 ) : ViewModel() {
     companion object {
         private const val TAG = "OnlineModuleViewModel"
-        // FolkPatch module API
+        // FolkLite module API
         private const val BASE_MODULES_URL = "https://folk.mysqil.com/api/modules.php"
     }
 
