@@ -12,6 +12,7 @@
     <string name="reboot_bootloader">Reboot ke Bootloader</string>
     <string name="home_click_to_learn_apatch">Pelajari fitur dan penggunaan FolkPatch</string>
     <string name="reboot_edl">Reboot ke EDL</string>
+    <string name="reboot_fastbootd">Mulai Ulang ke FastbootD</string>
     <string name="home_learn_apatch">Pelajari FolkPatch</string>
     <string name="about">Tentang</string>
     <string name="about_source_code"><![CDATA[<p>Lihat kode sumber di %1$s<p/>Gabung kanal %2$s kami<p/>Gabung grup %3$s kami]]></string>

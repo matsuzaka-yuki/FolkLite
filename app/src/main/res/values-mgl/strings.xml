@@ -18,6 +18,7 @@
     <string name="reboot_bootloader">前往召唤阵</string>
     <string name="reboot_download">进入星之回廊</string>
     <string name="reboot_edl">进入梦境之门</string>
+    <string name="reboot_fastbootd">前往星界传送阵</string>
     <string name="about">我来自哪?</string>
     <string name="settings_app_language">魔法语言</string>
     <string name="system_default">默认魔法</string>

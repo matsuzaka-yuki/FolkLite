@@ -318,6 +318,7 @@ private fun TopBar(
         stringResource(R.string.reboot_bootloader),
         stringResource(R.string.reboot_download),
         stringResource(R.string.reboot_edl),
+        stringResource(R.string.reboot_fastbootd),
     )
 
     val moreItems = listOf(
@@ -361,6 +362,7 @@ private fun TopBar(
                                             2 -> reboot("bootloader")
                                             3 -> reboot("download")
                                             4 -> reboot("edl")
+                                            5 -> reboot("fastboot")
                                         }
                                         howDropdownReboot.value = false
                                     },

@@ -7,6 +7,7 @@
     <string name="reboot_download">Reiniciar al modo «download»</string>
     <string name="home_click_to_learn_apatch">Aprende sobre las características de FolkPatch y de cómo sacarles partido</string>
     <string name="reboot_edl">Reiniciar al modo EDL</string>
+    <string name="reboot_fastbootd">Reiniciar en FastbootD</string>
     <string name="reboot_recovery">Reiniciar al modo recuperación</string>
     <string name="home_learn_apatch">Más información sobre FolkPatch</string>
     <string name="about">Acerca de</string>

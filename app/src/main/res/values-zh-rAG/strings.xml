@@ -14,6 +14,7 @@
     <string name="reboot_download">重启到 Download 模式哒喵！</string>
     <string name="home_click_to_learn_apatch">快戳人家喵！看看 FolkPatch 能干什么喵~</string>
     <string name="reboot_edl">重启到 EDL 模式哒喵！</string>
+    <string name="reboot_fastbootd">重启到 FastbootD 模式哒喵！</string>
     <string name="home_installing">正在安装中喵！不要催人家啦~</string>
     <string name="safe_mode">安全模式喵</string>
     <string name="reboot_recovery">重启到 Recovery 模式哒喵！</string>

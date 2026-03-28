@@ -40,6 +40,7 @@
     <string name="reboot_bootloader">Перезагрузить в Bootloader</string>
     <string name="reboot_download">Перезагрузить в Download</string>
     <string name="reboot_edl">Перезагрузить в EDL</string>
+    <string name="reboot_fastbootd">Перезагрузить в FastbootD</string>
     <string name="about">О приложении</string>
     <string name="apm_uninstall_confirm">Удалить модуль \"%s\"?</string>
     <string name="apm_uninstall_success">%s удален</string>

@@ -9,6 +9,7 @@
     <string name="reboot_bootloader">Khởi động vào Bootloader</string>
     <string name="reboot_download">Khởi động vào Download</string>
     <string name="reboot_edl">Khởi động vào EDL</string>
+    <string name="reboot_fastbootd">Khởi động lại vào FastbootD</string>
     <string name="about">Giới thiệu</string>
     <string name="home_click_to_learn_apatch">Tìm hiểu về các tính năng của AndroidPatch và cách sử dụng</string>
     <string name="send_log">Gửi nhật ký</string>

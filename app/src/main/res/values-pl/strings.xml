@@ -65,6 +65,7 @@
     <string name="apm_new_version_available">Dostępna jest nowa wersja %s. Kliknij, aby uaktualnić.</string>
     <string name="reboot_download">Restartuj do Download</string>
     <string name="reboot_edl">Restartuj do EDL</string>
+    <string name="reboot_fastbootd">Uruchom ponownie w trybie FastbootD</string>
     <string name="reboot_recovery">Restartuj do Recovery</string>
     <string name="patch_set_superkey">Ustaw SuperKey</string>
     <string name="reboot_bootloader">Restartuj do Bootloadera</string>

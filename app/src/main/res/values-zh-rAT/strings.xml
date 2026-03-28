@@ -18,6 +18,7 @@
     <string name="reboot_bootloader">前往天堂之门</string>
     <string name="reboot_download">进入星辰圣殿</string>
     <string name="reboot_edl">进入梦界圣域</string>
+    <string name="reboot_fastbootd">前往天使神殿</string>
     <string name="about">创世之纪</string>
     <string name="settings_app_language">圣域语言</string>
     <string name="system_default">天意默认</string>

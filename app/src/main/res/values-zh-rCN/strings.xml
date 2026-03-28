@@ -14,6 +14,7 @@
     <string name="reboot_download">重启至 Download</string>
     <string name="home_click_to_learn_apatch">查看 FolkPatch 的特性和用法</string>
     <string name="reboot_edl">重启至 EDL</string>
+    <string name="reboot_fastbootd">重启至 FastbootD</string>
     <string name="home_installing">安装中</string>
     <string name="safe_mode">安全模式</string>
     <string name="reboot_recovery">重启至 Recovery</string>

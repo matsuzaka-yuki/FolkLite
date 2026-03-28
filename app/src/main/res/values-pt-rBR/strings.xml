@@ -18,6 +18,7 @@
     <string name="reboot_bootloader">Reiniciar em modo Bootloader</string>
     <string name="reboot_download">Reiniciar em modo Download</string>
     <string name="reboot_edl">Reiniciar em modo EDL</string>
+    <string name="reboot_fastbootd">Reiniciar em modo FastbootD</string>
     <string name="about">Sobre</string>
     <string name="home_learn_apatch">Saiba mais sobre o FolkPatch</string>
     <string name="home_click_to_learn_apatch">Conheça os recursos do FolkPatch e como usá-lo</string>

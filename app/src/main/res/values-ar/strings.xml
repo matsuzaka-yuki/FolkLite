@@ -10,6 +10,7 @@
     <string name="reboot_bootloader">إعادة تشغيل إلى محمل الإقلاع</string>
     <string name="reboot_download">إعادة تشغيل إلى وضع التنزيل</string>
     <string name="reboot_edl">إعادة تشغيل إلى EDL</string>
+    <string name="reboot_fastbootd">إعادة التشغيل إلى وضع FastbootD</string>
     <string name="about">حول التطبيق</string>
     <string name="home_learn_apatch">تعلم FolkPatch</string>
     <string name="home_click_to_learn_apatch">تعرف على ميزات AndroidPatch وكيفية استخدامه</string>

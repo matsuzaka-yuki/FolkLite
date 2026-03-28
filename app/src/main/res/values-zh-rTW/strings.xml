@@ -4,6 +4,7 @@
     <string name="patch_warnning">安裝過程存在風險。請確保你的資料已備份。</string>
     <string name="reboot_download">重新啟動至 Download</string>
     <string name="reboot_edl">重新啟動至 EDL</string>
+    <string name="reboot_fastbootd">重新啟動至 FastbootD</string>
     <string name="reboot_recovery">重新啟動至 Recovery</string>
     <string name="kernel_patch">核心修補</string>
     <string name="about">關於</string>
