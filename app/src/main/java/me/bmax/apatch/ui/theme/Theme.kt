@@ -16,6 +16,7 @@ val LocalEnableBlur = staticCompositionLocalOf { false }
 val LocalEnableFloatingBottomBar = staticCompositionLocalOf { false }
 val LocalEnableLiquidGlass = staticCompositionLocalOf { false }
 val LocalBottomBarVisible = staticCompositionLocalOf<MutableState<Boolean>> { mutableStateOf(true) }
+val LocalMainPagerState = staticCompositionLocalOf<me.bmax.apatch.ui.MainPagerState?> { null }
 
 @Composable
 fun APatchTheme(

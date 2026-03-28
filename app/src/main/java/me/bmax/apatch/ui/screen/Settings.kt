@@ -67,8 +67,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
-import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.generated.destinations.NavigationLayoutScreenDestination
 import com.ramcosta.composedestinations.generated.destinations.UmountConfigScreenDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -114,7 +112,6 @@ import top.yukonga.miuix.kmp.extra.SuperDropdown
 import top.yukonga.miuix.kmp.extra.SuperSwitch
 import top.yukonga.miuix.kmp.utils.overScrollVertical
 
-@Destination<RootGraph>
 @Composable
 fun SettingScreen(navigator: DestinationsNavigator) {
     val scrollBehavior = MiuixScrollBehavior()

@@ -67,8 +67,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.core.net.toUri
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.generated.destinations.ExecuteAPMActionScreenDestination
 import com.ramcosta.composedestinations.generated.destinations.InstallScreenDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -116,7 +114,6 @@ import top.yukonga.miuix.kmp.basic.CardDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.ui.graphics.Color
 
-@Destination<RootGraph>
 @Composable
 fun APModuleScreen(navigator: DestinationsNavigator) {
     val context = LocalContext.current
