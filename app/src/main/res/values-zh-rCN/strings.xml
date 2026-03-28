@@ -12,13 +12,13 @@
     <string name="home_install_unknown">未安装或未鉴权</string>
     <string name="home_install_unknown_summary">点此安装</string>
     <string name="reboot_download">重启至 Download</string>
-    <string name="home_click_to_learn_apatch">查看 FolkPatch 的特性和用法</string>
+    <string name="home_click_to_learn_apatch">查看 FolkLite 的特性和用法</string>
     <string name="reboot_edl">重启至 EDL</string>
     <string name="reboot_fastbootd">重启至 FastbootD</string>
     <string name="home_installing">安装中</string>
     <string name="safe_mode">安全模式</string>
     <string name="reboot_recovery">重启至 Recovery</string>
-    <string name="home_learn_apatch">了解 FolkPatch</string>
+    <string name="home_learn_apatch">了解 FolkLite</string>
     <string name="kernel_patch">内核补丁</string>
     <string name="home_click_to_install">点此安装</string>
     <string name="about">关于</string>
@@ -37,7 +37,7 @@
     <string name="home_ap_cando_uninstall">卸载</string>
     <string name="apatch_version">版本：%s</string>
     <string name="home_ap_cando_install">安装</string>
-    <string name="home_apatch_version">FolkPatch 版本</string>
+    <string name="home_apatch_version">FolkLite 版本</string>
     <string name="home_su_path">可执行su路径</string>
     <string name="home_ap_cando_update">更新</string>
     <string name="apatch_version_update">版本：%1$s → %2$s</string>
@@ -166,7 +166,7 @@
     <string name="hide_apatch_dialog_summary">将使用新的名称安装管理器</string>
     <string name="hide_apatch_manager_failure">隐藏失败，请提交反馈！</string>
     <string name="hide_apatch_manager_summary">安装代理应用，安装包 ID 随机且自定义应用标签</string>
-    <string name="hide_apatch_manager">隐藏 FolkPatch 管理器</string>
+    <string name="hide_apatch_manager">隐藏 FolkLite 管理器</string>
     <string name="kpm_embed">嵌入</string>
     <string name="kpm_add_kpm">添加内核模块</string>
     <string name="kpm_install">安装</string>
@@ -182,7 +182,7 @@
 \n注意只能在 OTA 更新完成后的重启之前使用。
 \n确定要继续吗？</string>
     <string name="home_dialog_auth_fail_title">超级密钥鉴权失败</string>
-    <string name="home_dialog_auth_fail_content">超级密钥验证失败，因此 FolkPatch 不能正常工作。\n下面是一些可能的原因： \n⒈ 未使用 KernelPatch 修补内核镜像 \n⒉ KernelPatch 修补后的内核镜像未刷入 \n⒊超级密钥输入错误或包含特殊字符\n⒋设备不支持 FolkPatch 以及 KernelPatch \n\n请检查后重试，如果问题仍然存在，可随时前往 GitHub 仓库的 issues 页面提问。</string>
+    <string name="home_dialog_auth_fail_content">超级密钥验证失败，因此 FolkLite 不能正常工作。\n下面是一些可能的原因： \n⒈ 未使用 KernelPatch 修补内核镜像 \n⒉ KernelPatch 修补后的内核镜像未刷入 \n⒊超级密钥输入错误或包含特殊字符\n⒋设备不支持 FolkLite 以及 KernelPatch \n\n请检查后重试，如果问题仍然存在，可随时前往 GitHub 仓库的 issues 页面提问。</string>
     <string name="home_more_menu_feedback_or_suggestion">反馈或建议</string>
     <string name="home_more_menu_about">关于</string>
     <string name="settings_check_update">检查更新</string>
@@ -190,11 +190,11 @@
     <string name="hide_about_card">隐藏关于卡片</string>
     <string name="hide_about_card_summary">隐藏主页的关于卡片</string>
     <string name="update_available_title">有新版本可用</string>
-    <string name="update_available_message">FolkPatch 有新版本可用，是否立即更新？</string>
+    <string name="update_available_message">FolkLite 有新版本可用，是否立即更新？</string>
     <string name="update_close">稍后</string>
     <string name="update_action">立即更新</string>
     <string name="unofficial_version_title">非官方版本</string>
-    <string name="unofficial_version_message">您正在使用的 FolkPatch 管理器为第三方版本，可能会造成财产损失，请下载正版APP使用！</string>
+    <string name="unofficial_version_message">您正在使用的 FolkLite 管理器为第三方版本，可能会造成财产损失，请下载正版APP使用！</string>
     <string name="go_to_github">前往 Github</string>
     <string name="patch_mode_install_to_next_slot">修补另一槽位内核</string>
     <string name="apm_webui_open">打开</string>
@@ -268,7 +268,7 @@
     <string name="settings_force_overlayfs_mode_summary">在内核支持可用时用 OverlayFS 而非 Magic Mount 来挂载系统模块，需要重启生效。</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">启用内置的模块挂载系统</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">一定程度上隐藏Bootloader锁解锁状态</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>
@@ -328,6 +328,8 @@
     <string name="settings_enable_blur_summary">为顶栏和导航栏添加模糊效果</string>
     <string name="settings_floating_bottom_bar">悬浮底栏</string>
     <string name="settings_floating_bottom_bar_summary">使用悬浮胶囊样式的导航栏</string>
+    <string name="settings_floating_bottom_bar_auto_hide">自动隐藏悬浮底栏</string>
+    <string name="settings_floating_bottom_bar_auto_hide_summary">无操作3秒后自动隐藏悬浮导航栏</string>
     <string name="settings_enable_liquid_glass">液态玻璃</string>
     <string name="settings_enable_liquid_glass_summary">为悬浮底栏添加玻璃效果</string>
     <string name="settings_section_kernel">内核补丁</string>

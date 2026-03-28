@@ -353,7 +353,7 @@ internal fun TopBarList(
                                     optionSize = moreItems.size,
                                     onSelectedIndexChange = {
                                         when (index) {
-                                            0 -> uriHandler.openUri("https://github.com/matsuzaka-yuki/FolkPatch/issues/new/choose")
+                                            0 -> uriHandler.openUri("https://github.com/matsuzaka-yuki/FolkLite/issues/new/choose")
                                             1 -> navigator.navigate(AboutScreenDestination)
                                         }
                                         showDropdownMoreOptions.value = false

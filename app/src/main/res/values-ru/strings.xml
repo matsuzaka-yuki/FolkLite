@@ -15,7 +15,7 @@
     <string name="apatch_version">Версия: %s</string>
     <string name="apatch_version_update">Версия: %1$s → %2$s</string>
     <string name="home_su_path">Исполняемый файл su</string>
-    <string name="home_apatch_version">Версия FolkPatch</string>
+    <string name="home_apatch_version">Версия FolkLite</string>
     <string name="home_kernel">Версия ядра</string>
     <string name="home_manager_version">Версия менеджера</string>
     <string name="home_fingerprint">Отпечаток</string>
@@ -59,8 +59,8 @@
     <string name="safe_mode">Безопасный режим</string>
     <string name="apm_reboot_to_apply">Перезагрузите, чтобы изменения вступили в силу</string>
     <string name="apm_magisk_conflict">Модули недоступны из-за конфликта с Magisk!</string>
-    <string name="home_learn_apatch">Узнать больше про FolkPatch</string>
-    <string name="home_click_to_learn_apatch">Узнайте о возможностях FolkPatch и о том, как его использовать</string>
+    <string name="home_learn_apatch">Узнать больше про FolkLite</string>
+    <string name="home_click_to_learn_apatch">Узнайте о возможностях FolkLite и о том, как его использовать</string>
     <string name="about_source_code"><![CDATA[<p>Посмотрите исходный код на %1$s<p/>Присоединяйтесь к нашему каналу %2$s</p>Присоединяйтесь к нашей группе %3$s]]></string>
     <string name="apm_update">Обновить</string>
     <string name="apm_updated">Обновлено</string>
@@ -87,7 +87,7 @@
     <string name="su_selinux_via_hook">обход через хук</string>
     <string name="su_pkg_excluded_label">исключён</string>
     <string name="su_pkg_excluded_setting_title">Запретить изменения</string>
-    <string name="su_pkg_excluded_setting_summary">Включение этой опции позволит FolkPatch восстановить любые файлы этого приложения, которые были модифицированы модулями.</string>
+    <string name="su_pkg_excluded_setting_summary">Включение этой опции позволит FolkLite восстановить любые файлы этого приложения, которые были модифицированы модулями.</string>
     <string name="home_ap_cando_install">Установить</string>
     <string name="home_ap_cando_update">Обновить</string>
     <string name="home_ap_cando_uninstall">Деинсталлировать</string>
@@ -147,7 +147,7 @@
     <string name="kpm_embed">Встроить</string>
     <string name="kpm_add_kpm">Добавить KPM</string>
     <string name="success">Успешно</string>
-    <string name="hide_apatch_manager">Скрыть менеджер FolkPatch</string>
+    <string name="hide_apatch_manager">Скрыть менеджер FolkLite</string>
     <string name="hide_apatch_manager_failure">Не удалось скрыть. Пожалуйста, сообщите об ошибке!</string>
     <string name="hide_apatch_dialog_summary">Оно будет использоваться как новое название приложения</string>
     <string name="hide_apatch_dialog_new_manager_name">Новое название менеджера</string>
@@ -163,7 +163,7 @@
     <string name="kpm_control">Управление</string>
     <string name="mode_select_page_patch_and_install">Пропатчить и установить</string>
     <string name="settings_donot_store_superkey_summary">Вам придётся вводить СуперКлюч каждый раз при открытии менеджера</string>
-    <string name="home_dialog_auth_fail_content">Не удалось проверить суперключ, поэтому FolkPatch не может работать.\nВот некоторые возможные причины этой ошибки:\n1. Вы не пропатчили boot.img с помощью KernelPatch.\n2. Вы забыли прошить патченный boot.img\n3. Неверный СуперКлюч.\n4. Ваше устройство не поддерживает FolkPatch и KernelPatch.\n\nПожалуйста, установите FolkPatch повторно и проверьте, правильный ли суперключ вы вводите. Если это не помогло, сообщите нам об ошибке или задайте вопрос в Issues официального репозитория.</string>
+    <string name="home_dialog_auth_fail_content">Не удалось проверить суперключ, поэтому FolkLite не может работать.\nВот некоторые возможные причины этой ошибки:\n1. Вы не пропатчили boot.img с помощью KernelPatch.\n2. Вы забыли прошить патченный boot.img\n3. Неверный СуперКлюч.\n4. Ваше устройство не поддерживает FolkLite и KernelPatch.\n\nПожалуйста, установите FolkLite повторно и проверьте, правильный ли суперключ вы вводите. Если это не помогло, сообщите нам об ошибке или задайте вопрос в Issues официального репозитория.</string>
     <string name="home_more_menu_about">О приложении</string>
     <string name="home_dialog_uninstall_ap_only">Удалить AndroidPatch</string>
     <string name="home_dialog_uninstall_ap_only_desc">Удалить только AndroidPatch и сохранить менеджер.</string>
@@ -233,15 +233,15 @@
     <string name="settings_force_overlayfs_mode">Принудительное использование OverlayFS</string>
     <string name="settings_force_overlayfs_mode_summary">Используйте OverlayFS для монтирования APModules вместо Magic Mount, когда поддержка ядра доступна. Требуется перезагрузка.</string>
     <string name="update_available_title">Доступно обновление</string>
-    <string name="update_available_message">Доступна новая версия FolkPatch. Обновить сейчас?</string>
+    <string name="update_available_message">Доступна новая версия FolkLite. Обновить сейчас?</string>
     <string name="update_close">Позже</string>
     <string name="update_action">Обновить сейчас</string>
     <string name="unofficial_version_title">Неофициальная версия</string>
-    <string name="unofficial_version_message">Вы используете менеджер FolkPatch от третьих лиц, это может привести к финансовым потерям, пожалуйста, загрузите официальное приложение!</string>
+    <string name="unofficial_version_message">Вы используете менеджер FolkLite от третьих лиц, это может привести к финансовым потерям, пожалуйста, загрузите официальное приложение!</string>
     <string name="go_to_github">Перейти на Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Включить встроенную систему монтирования модулей</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Скрывать статус разблокировки загрузчика в некоторой степени</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>

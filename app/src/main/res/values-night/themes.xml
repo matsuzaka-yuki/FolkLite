@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.FolkPatch.WebUI" parent="Theme.FolkPatch" />
+    <style name="Theme.FolkLite.WebUI" parent="Theme.FolkLite" />
 
 </resources>

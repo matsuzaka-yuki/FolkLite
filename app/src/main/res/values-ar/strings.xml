@@ -12,7 +12,7 @@
     <string name="reboot_edl">إعادة تشغيل إلى EDL</string>
     <string name="reboot_fastbootd">إعادة التشغيل إلى وضع FastbootD</string>
     <string name="about">حول التطبيق</string>
-    <string name="home_learn_apatch">تعلم FolkPatch</string>
+    <string name="home_learn_apatch">تعلم FolkLite</string>
     <string name="home_click_to_learn_apatch">تعرف على ميزات AndroidPatch وكيفية استخدامه</string>
     <string name="about_source_code"><![CDATA[<p> عرض كود المصدر على %1$s<p/> انضم إلى قناتنا %2$s انضم إلى مجموعتنا %3$s]]></string>
     <string name="send_log">أرسل السجلات</string>
@@ -33,7 +33,7 @@
     <string name="apatch_version_update">الإصدار: %1$s -&gt; %2$s</string>
     <string name="home_auth_key_desc">البدء بعد التوثيق</string>
     <string name="home_su_path">مستخدم خارق قابل للتنفيذ</string>
-    <string name="home_apatch_version">إصدار FolkPatch</string>
+    <string name="home_apatch_version">إصدار FolkLite</string>
     <string name="home_auth_key_title">ادخل المفتاح الخارق</string>
     <string name="home_ap_cando_install">تثبيت</string>
     <string name="home_ap_cando_update">تحديث</string>
@@ -137,7 +137,7 @@
     <string name="patch_item_extra_args">الحجج:</string>
     <string name="patch_item_extra_event">الحدث:</string>
     <string name="patch_item_skey">المفتاح الخارق</string>
-    <string name="hide_apatch_manager">إخفاء مدير FolkPatch</string>
+    <string name="hide_apatch_manager">إخفاء مدير FolkLite</string>
     <string name="kpm_embed">تضمين</string>
     <string name="hide_apatch_dialog_new_manager_name">اسم المدير الجديد</string>
     <string name="kpm_add_kpm">إضافة KPM</string>
@@ -176,7 +176,7 @@
     <string name="mode_select_page_install_inactive_slot_warning">**سيتم إجبار جهازك** على التمهيد إلى الفتحة غير النشطة الحالية بعد إعادة التشغيل!
 \nاستخدم هذا الخيار فقط بعد انتهاء التحديث الهوائي.
 \nهل تريد المتابعة؟</string>
-    <string name="home_dialog_auth_fail_content">غير قادر على مصادقة المفتاح الخارق، وبالتالي لا يمكن لـ FolkPatch العمل بشكل صحيح. \nفيما يلي بعض الأسباب المحتملة لفشل المصادقة: \n1. لم تقم بتصحيح صورة التمهيد باستخدام KernelPatch. \n2. لم يتم تثبيت صورة التمهيد المصححة. \n3. مفتاح خارق خطأ. \n4. جهازك لا يدعم FolkPatch وKernelPatch. \n \nيرجى التحقق والمحاولة مرة أخرى. إذا كانت لا تزال هناك مشكلات، فيمكنك دائمًا طرح الأسئلة على صفحة المشكلات الخاصة بالمستودع الرسمي.</string>
+    <string name="home_dialog_auth_fail_content">غير قادر على مصادقة المفتاح الخارق، وبالتالي لا يمكن لـ FolkLite العمل بشكل صحيح. \nفيما يلي بعض الأسباب المحتملة لفشل المصادقة: \n1. لم تقم بتصحيح صورة التمهيد باستخدام KernelPatch. \n2. لم يتم تثبيت صورة التمهيد المصححة. \n3. مفتاح خارق خطأ. \n4. جهازك لا يدعم FolkLite وKernelPatch. \n \nيرجى التحقق والمحاولة مرة أخرى. إذا كانت لا تزال هناك مشكلات، فيمكنك دائمًا طرح الأسئلة على صفحة المشكلات الخاصة بالمستودع الرسمي.</string>
     <string name="patch_mode_patch_and_install">الوضع: باتش وتثبيت</string>
     <string name="patch_mode_install_to_next_slot">الوضع: تثبيت في الفتحة التالية (بعد OTA)</string>
     <string name="apm_webui_open">فتح</string>
@@ -232,15 +232,15 @@
     <string name="settings_force_overlayfs_mode">فرض استخدام OverlayFS</string>
     <string name="settings_force_overlayfs_mode_summary">استخدم OverlayFS لتحميل APModules بدلاً من Magic Mount عندما يكون دعم النواة متاحًا. يتطلب إعادة التشغيل.</string>
     <string name="update_available_title">تحديث متوفر</string>
-    <string name="update_available_message">إصدار جديد من FolkPatch متاح. هل تريد التحديث الآن؟</string>
+    <string name="update_available_message">إصدار جديد من FolkLite متاح. هل تريد التحديث الآن؟</string>
     <string name="update_close">لاحقاً</string>
     <string name="update_action">تحديث الآن</string>
     <string name="unofficial_version_title">نسخة غير رسمية</string>
-    <string name="unofficial_version_message">أنت تستخدم مدير FolkPatch من طرف ثالث، وهذا قد يسبب خسائر مالية، يرجى تحميل التطبيق الرسمي!</string>
+    <string name="unofficial_version_message">أنت تستخدم مدير FolkLite من طرف ثالث، وهذا قد يسبب خسائر مالية، يرجى تحميل التطبيق الرسمي!</string>
     <string name="go_to_github">الذهاب إلى Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">تمكين نظام تحميل الوحدات المدمج</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">إخفاء حالة فتح قفل محمل الإقلاع إلى حد ما</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>

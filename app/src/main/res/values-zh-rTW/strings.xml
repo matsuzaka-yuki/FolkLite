@@ -22,9 +22,9 @@
     <string name="home_install_unknown">未安裝或未鑒權</string>
     <string name="apm_uninstall_confirm">確定要解除安裝「%s」模組？</string>
     <string name="su_pkg_excluded_setting_title">排除修改</string>
-    <string name="home_click_to_learn_apatch">學習有關 FolkPatch 的功能及使用方式</string>
+    <string name="home_click_to_learn_apatch">學習有關 FolkLite 的功能及使用方式</string>
     <string name="apm_version">版本</string>
-    <string name="su_pkg_excluded_setting_summary">啟用此選項將允許 FolkPatch 還原此應用程式被模組修改的任何檔案。</string>
+    <string name="su_pkg_excluded_setting_summary">啟用此選項將允許 FolkLite 還原此應用程式被模組修改的任何檔案。</string>
     <string name="home_installing">安裝中</string>
     <string name="apm_start_downloading">開始下載 %s</string>
     <string name="su_pkg_excluded_label">忽略</string>
@@ -40,7 +40,7 @@
     <string name="su_refresh">重新整理</string>
     <string name="su_show_system_apps">顯示系統應用程式</string>
     <string name="home_ap_cando_install">安裝</string>
-    <string name="home_learn_apatch">深入瞭解 FolkPatch</string>
+    <string name="home_learn_apatch">深入瞭解 FolkLite</string>
     <string name="apm_failed_to_disable">無法停用「%s」模組</string>
     <string name="home_click_to_install">點擊以開始安裝</string>
     <string name="home_selinux_status_unknown">未知</string>
@@ -84,7 +84,7 @@
     <string name="apm">AP模組</string>
     <string name="safe_mode">安全模式</string>
     <string name="super_key">超級密鑰</string>
-    <string name="home_apatch_version">FolkPatch 版本</string>
+    <string name="home_apatch_version">FolkLite 版本</string>
     <string name="patch_set_superkey">設定超級密鑰</string>
     <string name="home_su_path">可執行 SU 路徑</string>
     <string name="home_patch_next_step">下一步</string>
@@ -142,7 +142,7 @@
     <string name="patch_item_kpimg_version">版本：</string>
     <string name="patch_item_kpimg_comile_time">時間：</string>
     <string name="patch_item_kpimg_config">設定：</string>
-    <string name="hide_apatch_manager">隱藏 FolkPatch 管理器</string>
+    <string name="hide_apatch_manager">隱藏 FolkLite 管理器</string>
     <string name="hide_apatch_dialog_new_manager_name">新管理器名稱</string>
     <string name="hide_apatch_dialog_summary">它將用作啟動器中顯示的新應用程式標籤</string>
     <string name="hide_apatch_manager_summary">使用隨機套件 ID 和自訂應用程式標籤安裝新的代理應用程式</string>
@@ -171,7 +171,7 @@
     <string name="apm_webui_open">打開網頁介面</string>
     <string name="enable_web_debugging_summary">可用於偵錯WebUI，請僅在需要時啟用。</string>
     <string name="settings_donot_store_superkey">停用本機儲存密鑰</string>
-    <string name="home_dialog_auth_fail_content">無法驗證超級密鑰，因此 FolkPatch 無法正常運作。 \n以下是驗證失敗的一些可能原因： \n1. 您尚未使用 KernelPatch 程式修補啟動映像檔。 \n2. 修補後的啟動映像檔未刷入裝置。 \n3. 超級密鑰錯誤。 \n4. 您的裝置不支援 FolkPatch 和 KernelPatch。 \n \n請檢查並再次嘗試。如果仍存在問題，您隨時可以在官方存放庫的議題頁面上提問。</string>
+    <string name="home_dialog_auth_fail_content">無法驗證超級密鑰，因此 FolkLite 無法正常運作。 \n以下是驗證失敗的一些可能原因： \n1. 您尚未使用 KernelPatch 程式修補啟動映像檔。 \n2. 修補後的啟動映像檔未刷入裝置。 \n3. 超級密鑰錯誤。 \n4. 您的裝置不支援 FolkLite 和 KernelPatch。 \n \n請檢查並再次嘗試。如果仍存在問題，您隨時可以在官方存放庫的議題頁面上提問。</string>
     <string name="home_install_unknown_summary">點擊以安裝</string>
     <string name="home_device_info">裝置</string>
     <string name="home_new_apatch_found">新版本可用：%s，點選升級。</string>
@@ -232,14 +232,14 @@
     <string name="crash_handle_copied">已將崩潰日誌複製到剪貼簿。</string>
     <string name="settings_force_overlayfs_mode">強制使用 OverlayFS</string>
     <string name="update_available_title">有新版本可用</string>
-    <string name="update_available_message">FolkPatch 有新版本可用，是否立即更新？</string>
+    <string name="update_available_message">FolkLite 有新版本可用，是否立即更新？</string>
     <string name="update_close">稍後</string>
     <string name="unofficial_version_title">非官方版本</string>
-    <string name="unofficial_version_message">您正在使用的 FolkPatch 管理器为第三方版本，可能会造成財產損失，請下載正版APP使用！</string>
+    <string name="unofficial_version_message">您正在使用的 FolkLite 管理器为第三方版本，可能会造成財產損失，請下載正版APP使用！</string>
     <string name="go_to_github">前往 Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">啟用內建的模組掛載系統</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">一定程度上隱藏Bootloader解鎖狀態</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>
@@ -306,6 +306,8 @@
     <string name="settings_enable_blur_summary">為頂欄和導航欄添加模糊效果</string>
     <string name="settings_floating_bottom_bar">懸浮底欄</string>
     <string name="settings_floating_bottom_bar_summary">使用懸浮膠囊樣式的導航欄</string>
+    <string name="settings_floating_bottom_bar_auto_hide">自動隱藏懸浮底欄</string>
+    <string name="settings_floating_bottom_bar_auto_hide_summary">無操作3秒後自動隱藏懸浮導航欄</string>
     <string name="settings_enable_liquid_glass">液態玻璃</string>
     <string name="settings_enable_liquid_glass_summary">為懸浮底欄添加玻璃效果</string>
     <string name="settings_section_kernel">核心補丁</string>

@@ -10,10 +10,10 @@
     <string name="reboot">Reboot</string>
     <string name="settings">Setelan</string>
     <string name="reboot_bootloader">Reboot ke Bootloader</string>
-    <string name="home_click_to_learn_apatch">Pelajari fitur dan penggunaan FolkPatch</string>
+    <string name="home_click_to_learn_apatch">Pelajari fitur dan penggunaan FolkLite</string>
     <string name="reboot_edl">Reboot ke EDL</string>
     <string name="reboot_fastbootd">Mulai Ulang ke FastbootD</string>
-    <string name="home_learn_apatch">Pelajari FolkPatch</string>
+    <string name="home_learn_apatch">Pelajari FolkLite</string>
     <string name="about">Tentang</string>
     <string name="about_source_code"><![CDATA[<p>Lihat kode sumber di %1$s<p/>Gabung kanal %2$s kami<p/>Gabung grup %3$s kami]]></string>
     <string name="send_log">Kirim log</string>
@@ -37,7 +37,7 @@
     <string name="home_ap_cando_update">Perbarui</string>
     <string name="home_ap_cando_uninstall">Hapus</string>
     <string name="home_ap_cando_install">Instal</string>
-    <string name="home_apatch_version">Versi FolkPatch</string>
+    <string name="home_apatch_version">Versi FolkLite</string>
     <string name="home_su_path">Binari SU</string>
     <string name="home_kernel">Kernel</string>
     <string name="home_manager_version">Versi manajer</string>
@@ -72,7 +72,7 @@
     <string name="su_hide_system_apps">Sembunyikan aplikasi sistem</string>
     <string name="kpm_kp_not_installed">KernelPatch tidak terinstal</string>
     <string name="su_pkg_excluded_setting_title">Kecualikan modifikasi</string>
-    <string name="su_pkg_excluded_setting_summary">Aktifkan opsi ini agar FolkPatch dapat memulihkan kembali berkas yang termodifikasi oleh modul ini.</string>
+    <string name="su_pkg_excluded_setting_summary">Aktifkan opsi ini agar FolkLite dapat memulihkan kembali berkas yang termodifikasi oleh modul ini.</string>
     <string name="su_pkg_excluded_label">dikecualikan</string>
     <string name="su_title">SuperUser</string>
     <string name="su_selinux_via_hook">bypass via hook</string>
@@ -148,7 +148,7 @@
     <string name="hide_apatch_manager_failure">Gagal menyembunyikan. Tolong laporkan bug ini!</string>
     <string name="hide_apatch_manager_summary">Instal apl proksi dengan ID acak dan label kustom</string>
     <string name="hide_apatch_dialog_new_manager_name">Nama manajer baru</string>
-    <string name="hide_apatch_manager">Sembunyikan manajer FolkPatch</string>
+    <string name="hide_apatch_manager">Sembunyikan manajer FolkLite</string>
     <string name="hide_apatch_dialog_summary">Digunakan sebagai nama aplikasi di peluncur</string>
     <string name="success">Berhasil</string>
     <string name="failure">Gagal</string>
@@ -178,7 +178,7 @@
     <string name="home_install_unknown_summary">Klik untuk menginstal</string>
     <string name="home_device_info">Perangkat</string>
     <string name="home_system_version">Versi Sistem</string>
-    <string name="home_dialog_auth_fail_content">Gagal mengautentikasi SuperKey, FolkPatch tidak dapat berfungsi normal.\nHal ini dapat disebabkan oleh:\n1. Boot.img tidak di-patch dengan KernelPatch.\n2. Tidak menginstal/pasang boot.img yang sudah di-patch.\n3. Salah memasukkan atau terdapat karakter spesial pada SuperKey.\n4. Perangkat tidak mendukung FolkPatch dan KernelPatch.\n\nCek dan coba kembali. Jika tetap gagal, dapat menanyakan pada laman permasalahan di repositori resmi kami.</string>
+    <string name="home_dialog_auth_fail_content">Gagal mengautentikasi SuperKey, FolkLite tidak dapat berfungsi normal.\nHal ini dapat disebabkan oleh:\n1. Boot.img tidak di-patch dengan KernelPatch.\n2. Tidak menginstal/pasang boot.img yang sudah di-patch.\n3. Salah memasukkan atau terdapat karakter spesial pada SuperKey.\n4. Perangkat tidak mendukung FolkLite dan KernelPatch.\n\nCek dan coba kembali. Jika tetap gagal, dapat menanyakan pada laman permasalahan di repositori resmi kami.</string>
     <string name="enable_web_debugging_summary">Dapat digunakan untuk men-debug WebUI. Harap aktifkan hanya bila diperlukan.</string>
     <string name="settings_donot_store_superkey_summary">Autentikasi SuperKey setiap kali membuka manajer</string>
     <string name="settings_donot_store_superkey">Jangan simpan SuperKey secara lokal</string>
@@ -233,15 +233,15 @@
     <string name="settings_force_overlayfs_mode">Penggunaan Paksa OverlayFS</string>
     <string name="settings_force_overlayfs_mode_summary">Jika kernel mendukung, APMount menggunakan OverlayFS dibandingkan MagicMount. Reboot dibutuhkan.</string>
     <string name="update_available_title">Pembaruan Tersedia</string>
-    <string name="update_available_message">Versi baru FolkPatch tersedia. Perbarui sekarang?</string>
+    <string name="update_available_message">Versi baru FolkLite tersedia. Perbarui sekarang?</string>
     <string name="update_close">Nanti</string>
     <string name="update_action">Perbarui Sekarang</string>
     <string name="unofficial_version_title">Versi Tidak Resmi</string>
-    <string name="unofficial_version_message">Anda menggunakan pengelola FolkPatch pihak ketiga, ini dapat menyebabkan kerugian finansial, silakan unduh aplikasi resmi!</string>
+    <string name="unofficial_version_message">Anda menggunakan pengelola FolkLite pihak ketiga, ini dapat menyebabkan kerugian finansial, silakan unduh aplikasi resmi!</string>
     <string name="go_to_github">Pergi ke Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Aktifkan sistem pemasangan modul bawaan</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Sembunyikan status buka kunci bootloader sampai tingkat tertentu</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>

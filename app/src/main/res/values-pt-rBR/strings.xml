@@ -7,7 +7,7 @@
     <string name="kpm_desc">Descrição</string>
     <string name="kpm_args">Argumentos</string>
     <string name="su_title">SuperUsuário</string>
-    <string name="su_pkg_excluded_setting_summary">Ativar esta opção permitirá que o FolkPatch restaure quaisquer arquivos modificados pelos módulos deste app.</string>
+    <string name="su_pkg_excluded_setting_summary">Ativar esta opção permitirá que o FolkLite restaure quaisquer arquivos modificados pelos módulos deste app.</string>
     <string name="su_refresh">Atualizar</string>
     <string name="apm_reboot_to_apply">Reinicie para entrar em vigor</string>
     <string name="kernel_patch">KernelPatch</string>
@@ -20,8 +20,8 @@
     <string name="reboot_edl">Reiniciar em modo EDL</string>
     <string name="reboot_fastbootd">Reiniciar em modo FastbootD</string>
     <string name="about">Sobre</string>
-    <string name="home_learn_apatch">Saiba mais sobre o FolkPatch</string>
-    <string name="home_click_to_learn_apatch">Conheça os recursos do FolkPatch e como usá-lo</string>
+    <string name="home_learn_apatch">Saiba mais sobre o FolkLite</string>
+    <string name="home_click_to_learn_apatch">Conheça os recursos do FolkLite e como usá-lo</string>
     <string name="about_source_code"><![CDATA[<p>Veja o código-fonte no %1$s<p/>Participe do nosso canal do %2$s<p/>Participe do nosso grupo do %3$s]]></string>
     <string name="send_log">Reportar registros</string>
     <string name="safe_mode">Modo de segurança</string>
@@ -39,7 +39,7 @@
     <string name="apatch_version">Versão: %s</string>
     <string name="home_su_path">Su executável</string>
     <string name="apatch_version_update">Versão: %1$s -&gt; %2$s</string>
-    <string name="home_apatch_version">Versão do FolkPatch</string>
+    <string name="home_apatch_version">Versão do FolkLite</string>
     <string name="home_auth_key_title">Inserir SuperKey</string>
     <string name="home_auth_key_desc">Iniciar após a certificação</string>
     <string name="home_ap_cando_install">Instalar</string>
@@ -144,7 +144,7 @@
     <string name="patch_item_set_skey_label">A SuperKey deve ter de 8 a 63 caracteres e incluir números e letras, mas sem caracteres especiais.</string>
     <string name="hide_apatch_dialog_new_manager_name">Nome do novo gerenciador</string>
     <string name="hide_apatch_dialog_summary">Ele será usado como o novo nome do app mostrado na launcher</string>
-    <string name="hide_apatch_manager">Ocultar app do FolkPatch</string>
+    <string name="hide_apatch_manager">Ocultar app do FolkLite</string>
     <string name="hide_apatch_manager_summary">Instala o app oculto com ID aleatório e nome personalizado</string>
     <string name="hide_apatch_manager_failure">Falha ao ocultar. Por favor, reporte o bug!</string>
     <string name="kpm_embed">Incorporar</string>
@@ -166,7 +166,7 @@
     <string name="mode_select_page_select_file">Selecionar imagem boot para patch</string>
     <string name="mode_select_page_title">Instalar</string>
     <string name="mode_select_page_patch_and_install">Patch e instalação</string>
-    <string name="home_dialog_auth_fail_content">Não foi possível autenticar a SuperKey, portanto o FolkPatch não pode funcionar corretamente. \nAqui estão alguns possíveis motivos para a falha de autenticação:\n1. Você não fez patch do boot.img com KernelPatch.\n2. O boot.img corrigido não foi flashado.\n3. A SuperKey está incorreta ou contém caracteres especiais.\n4. Seu dispositivo não oferece suporte ao FolkPatch e KernelPatch.\n\nPor favor, verifique e tente novamente. Se ainda houver problemas, você pode fazer perguntas na página de problemas do repositório oficial.</string>
+    <string name="home_dialog_auth_fail_content">Não foi possível autenticar a SuperKey, portanto o FolkLite não pode funcionar corretamente. \nAqui estão alguns possíveis motivos para a falha de autenticação:\n1. Você não fez patch do boot.img com KernelPatch.\n2. O boot.img corrigido não foi flashado.\n3. A SuperKey está incorreta ou contém caracteres especiais.\n4. Seu dispositivo não oferece suporte ao FolkLite e KernelPatch.\n\nPor favor, verifique e tente novamente. Se ainda houver problemas, você pode fazer perguntas na página de problemas do repositório oficial.</string>
     <string name="home_more_menu_feedback_or_suggestion">Feedback ou sugestão</string>
     <string name="home_more_menu_about">Sobre</string>
     <string name="apm_webui_open">Abrir</string>
@@ -235,15 +235,15 @@
     <string name="settings_force_overlayfs_mode_summary">Use OverlayFS para montar os APMódulos em vez do Magic Mount, quando houver suporte no kernel. Reinicialização necessária.</string>
     <string name="settings_force_overlayfs_mode">Forçar o uso do OverlayFS</string>
     <string name="update_available_title">Atualização disponível</string>
-    <string name="update_available_message">Uma nova versão do FolkPatch está disponível. Atualizar agora?</string>
+    <string name="update_available_message">Uma nova versão do FolkLite está disponível. Atualizar agora?</string>
     <string name="update_close">Mais tarde</string>
     <string name="update_action">Atualizar agora</string>
     <string name="unofficial_version_title">Versão não oficial</string>
-    <string name="unofficial_version_message">Você está usando o gerenciador FolkPatch de terceiros, isso pode causar perdas financeiras, por favor baixe o aplicativo oficial!</string>
+    <string name="unofficial_version_message">Você está usando o gerenciador FolkLite de terceiros, isso pode causar perdas financeiras, por favor baixe o aplicativo oficial!</string>
     <string name="go_to_github">Ir para Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Ativar o sistema de montagem de módulos integrado</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Ocultar o status de desbloqueio do bootloader em certa medida</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>

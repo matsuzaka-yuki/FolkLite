@@ -1,7 +1,7 @@
 <div align="center">
-<a href="https://github.com/matsuzaka-yuki/FolkPatch/releases/latest"><img src="logo.png" style="width: 800px;" alt="logo"></a>
+<a href="https://github.com/matsuzaka-yuki/FolkLite/releases/latest"><img src="logo.png" style="width: 800px;" alt="logo"></a>
 
-<h1 align="center">FolkPatch Miuix</h1>
+<h1 align="center">FolkLite Miuix</h1>
 
 [![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/APatch-Ultra?label=Release&logo=github)](https://github.com/matsuzaka-yuki/APatch-Ultra/releases/latest)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/FolkPatch)
@@ -11,7 +11,7 @@
 
 **Language / 语言:** [中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md)
 
-**FolkPatch** is an extended non-parallel branch developed based on [APatch](https://github.com/bmax121/APatch), which only optimizes interface design and extends features without introducing new core functionalities.
+**FolkLite** is an extended non-parallel branch developed based on [APatch](https://github.com/bmax121/APatch), which only optimizes interface design and extends features without introducing new core functionalities.
 
 ## Key Features
 - Built based on MiuiX library
@@ -25,7 +25,7 @@
 
 ## Download & Installation
 
-Download the latest APK from the [Releases page](https://github.com/matsuzaka-yuki/FolkPatch/releases/latest).
+Download the latest APK from the [Releases page](https://github.com/matsuzaka-yuki/FolkLite/releases/latest).
 
 ## System Requirements
 
@@ -43,9 +43,9 @@ This project is based on the following open source projects:
 
 ## License
 
-FolkPatch is open source under the [GNU General Public License v3 (GPL-3)](http://www.gnu.org/copyleft/gpl.html).
+FolkLite is open source under the [GNU General Public License v3 (GPL-3)](http://www.gnu.org/copyleft/gpl.html).
 
-## FolkPatch Discussion & Communication
+## FolkLite Discussion & Communication
 
 - Telegram Channel: [@FolkPatch](https://t.me/FolkPatch)
 - QQ Group: 1074588103
@@ -54,4 +54,4 @@ FolkPatch is open source under the [GNU General Public License v3 (GPL-3)](http:
 
 Channel: [@APatch](https://t.me/apatch_discuss)
 
-Please report FolkPatch issues and suggestions in the [@FolkPatch](https://t.me/FolkPatch) channel or QQ group, and do not disturb the official channel.
+Please report FolkLite issues and suggestions in the [@FolkPatch](https://t.me/FolkPatch) channel or QQ group, and do not disturb the official channel.

@@ -37,14 +37,14 @@
     <string name="hide_about_card">「アプリについて」カードを非表示</string>
     <string name="hide_about_card_summary">ホーム画面の「アプリについて」のカードを非表示にします</string>
     <string name="update_available_title">更新が利用可能です</string>
-    <string name="update_available_message">FolkPatch の新しいバージョンが利用可能です。今すぐ更新しますか？</string>
+    <string name="update_available_message">FolkLite の新しいバージョンが利用可能です。今すぐ更新しますか？</string>
     <string name="update_close">後ほど</string>
     <string name="update_action">今すぐ更新</string>
     <string name="unofficial_version_title">非公式なバージョン</string>
-    <string name="unofficial_version_message">サードパーティー製の FolkPatch Manager を使用している場合、金銭的な損失が発生する可能性があります。公式アプリをダウンロードしてください。</string>
+    <string name="unofficial_version_message">サードパーティー製の FolkLite Manager を使用している場合、金銭的な損失が発生する可能性があります。公式アプリをダウンロードしてください。</string>
     <string name="go_to_github">GitHub を開く</string>
-    <string name="home_learn_apatch">FolkPatch について学習する</string>
-    <string name="home_click_to_learn_apatch">FolkPatch の機能と使用方法について学習します。</string>
+    <string name="home_learn_apatch">FolkLite について学習する</string>
+    <string name="home_click_to_learn_apatch">FolkLite の機能と使用方法について学習します。</string>
     <string name="about_source_code"><![CDATA[<p>%1$s でソースコードを表示<p/>%2$s のチャンネルに参加<p/>%3$s のグループに参加]]></string>
     <string name="send_log">ログを送信</string>
     <string name="save_log">ログを保存</string>
@@ -117,7 +117,7 @@
     <string name="home_system_version">システム バージョン</string>
     <string name="home_kpatch_version">KernelPatch バージョン</string>
     <string name="home_su_path">実行可能な su</string>
-    <string name="home_apatch_version">FolkPatch バージョン</string>
+    <string name="home_apatch_version">FolkLite バージョン</string>
     <string name="kpm">KP モジュール</string>
     <string name="kpm_kp_not_installed">KernelPatch はインストールされていません</string>
     <string name="kpm_add_kpm">KPM を追加</string>
@@ -139,7 +139,7 @@
     <string name="su_selinux_via_hook">フックでバイパス</string>
     <string name="su_pkg_excluded_label">除外</string>
     <string name="su_pkg_excluded_setting_title">変更を除外</string>
-    <string name="su_pkg_excluded_setting_summary">このオプションを有効化すると、FolkPatch はこのアプリのモジュールによって変更されたすべてのファイルを復元できるようになります。</string>
+    <string name="su_pkg_excluded_setting_summary">このオプションを有効化すると、FolkLite はこのアプリのモジュールによって変更されたすべてのファイルを復元できるようになります。</string>
     <string name="su_show_system_apps">システムアプリを表示</string>
     <string name="su_hide_system_apps">システムアプリを非表示</string>
     <string name="su_refresh">更新</string>
@@ -186,7 +186,7 @@
     <string name="apm_downloading">モジュールをダウンロード中: %s</string>
     <string name="apm_start_downloading">ダウンロードを開始中: %s</string>
     <string name="apm_new_version_available">新しいバージョンの %s が利用可能です。タップしてアップグレードしてください。</string>
-    <string name="hide_apatch_manager">FolkPatch Manager を非表示</string>
+    <string name="hide_apatch_manager">FolkLite Manager を非表示</string>
     <string name="hide_apatch_manager_summary">ランダムなパッケージ ID とカスタムアプリラベルを持つプロキシアプリをインストールします。</string>
     <string name="hide_apatch_dialog_new_manager_name">新しいマネージャーの名前</string>
     <string name="hide_apatch_dialog_summary">ランチャーに表示される新しいアプリラベルとして使用されます。</string>
@@ -270,7 +270,7 @@
     <string name="crash_handle_copied">クラッシュログをクリップボードにコピーしました。</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">内蔵のモジュールマウントシステムを有効化します。</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Bootloader Unlock 状態をある程度非表示にします。</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>

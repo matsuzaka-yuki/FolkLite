@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.FolkPatch" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.FolkLite" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
     </style>
 
     <style name="Theme.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-        <item name="postSplashScreenTheme">@style/Theme.FolkPatch</item>
+        <item name="postSplashScreenTheme">@style/Theme.FolkLite</item>
     </style>
 
-    <style name="Theme.FolkPatch.WebUI" parent="Theme.FolkPatch">
+    <style name="Theme.FolkLite.WebUI" parent="Theme.FolkLite">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
     </style>

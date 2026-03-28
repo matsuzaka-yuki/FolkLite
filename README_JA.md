@@ -1,7 +1,7 @@
 <div align="center">
-<a href="https://github.com/matsuzaka-yuki/FolkPatch/releases/latest"><img src="logo.png" style="width: 800px;" alt="logo"></a>
+<a href="https://github.com/matsuzaka-yuki/FolkLite/releases/latest"><img src="logo.png" style="width: 800px;" alt="logo"></a>
 
-<h1 align="center">FolkPatch Miuix</h1>
+<h1 align="center">FolkLite Miuix</h1>
 
 [![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/APatch-Ultra?label=Release&logo=github)](https://github.com/matsuzaka-yuki/APatch-Ultra/releases/latest)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/FolkPatch)
@@ -11,7 +11,7 @@
 
 **Language / 语言:** [中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md)
 
-**FolkPatch** は [APatch](https://github.com/bmax121/APatch) をベースに開発された拡張型の非並列ブランチです。新たなコア機能を導入せずにインターフェース設計の最適化と機能の拡張を行っています。
+**FolkLite** は [APatch](https://github.com/bmax121/APatch) をベースに開発された拡張型の非並列ブランチです。新たなコア機能を導入せずにインターフェース設計の最適化と機能の拡張を行っています。
 
 ## 主な特徴
 - MiuiX ライブラリをベースにビルド
@@ -25,7 +25,7 @@
 
 ## ダウンロードとインストール
 
-最新の APK を [Releases ページ](https://github.com/matsuzaka-yuki/FolkPatch/releases/latest)からダウンロードしてください。
+最新の APK を [Releases ページ](https://github.com/matsuzaka-yuki/FolkLite/releases/latest)からダウンロードしてください。
 
 ## システム要件
 
@@ -43,9 +43,9 @@
 
 ## ライセンス
 
-FolkPatch は [GNU General Public License v3 (GPL-3)](http://www.gnu.org/copyleft/gpl.html) に基づいています。
+FolkLite は [GNU General Public License v3 (GPL-3)](http://www.gnu.org/copyleft/gpl.html) に基づいています。
 
-## FolkPatch ディスカッションとコミュニケーション
+## FolkLite ディスカッションとコミュニケーション
 
 - Telegram チャンネル: [@FolkPatch](https://t.me/FolkPatch)
 - QQ グループ: 1074588103
@@ -54,4 +54,4 @@ FolkPatch は [GNU General Public License v3 (GPL-3)](http://www.gnu.org/copylef
 
 チャンネル: [@APatch](https://t.me/apatch_discuss)
 
-FolkPatch に関する問題や提案は [@FolkPatch](https://t.me/FolkPatch) のチャンネルまたは QQ グループに報告してください。公式のチャンネルに迷惑をかけないようにしてください。
+FolkLite に関する問題や提案は [@FolkPatch](https://t.me/FolkPatch) のチャンネルまたは QQ グループに報告してください。公式のチャンネルに迷惑をかけないようにしてください。

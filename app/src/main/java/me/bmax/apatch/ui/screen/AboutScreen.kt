@@ -102,7 +102,7 @@ fun AboutScreen(navigator: DestinationsNavigator) {
                 horizontalArrangement = Arrangement.Center
             ) {
                 Button(
-                    onClick = { uriHandler.openUri("https://github.com/matsuzaka-yuki/FolkPatch") }
+                    onClick = { uriHandler.openUri("https://github.com/matsuzaka-yuki/FolkLite") }
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.github),

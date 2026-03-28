@@ -45,15 +45,15 @@
     <string name="hide_about_card">Hide About Card</string>
     <string name="hide_about_card_summary">Hide the about card on home screen</string>
     <string name="update_available_title">Update Available</string>
-    <string name="update_available_message">A new version of FolkPatch is available. Update now?</string>
+    <string name="update_available_message">A new version of FolkLite is available. Update now?</string>
     <string name="update_close">Later</string>
     <string name="update_action">Update Now</string>
     <string name="unofficial_version_title">Unofficial Version</string>
-    <string name="unofficial_version_message">You are using a third-party FolkPatch manager, which may cause financial loss. Please download the official app!</string>
+    <string name="unofficial_version_message">You are using a third-party FolkLite manager, which may cause financial loss. Please download the official app!</string>
     <string name="go_to_github">Go to Github</string>
 
-    <string name="home_learn_apatch">Learn FolkPatch</string>
-    <string name="home_click_to_learn_apatch">Learn about the features of FolkPatch and how to use</string>
+    <string name="home_learn_apatch">Learn FolkLite</string>
+    <string name="home_click_to_learn_apatch">Learn about the features of FolkLite and how to use</string>
 
     <string name="about_source_code"><![CDATA[<p>View source code at %1$s<p/>Join our %2$s channel<p/>Join our %3$s group]]></string>
     <string name="send_log">Send logs</string>
@@ -136,7 +136,7 @@
     <string name="home_system_version">System version</string>
     <string name="home_kpatch_version">KernelPatch version</string>
     <string name="home_su_path">Executable su</string>
-    <string name="home_apatch_version">FolkPatch version</string>
+    <string name="home_apatch_version">FolkLite version</string>
 
     <string name="kpm">KPModule</string>
     <string name="kpm_kp_not_installed">KernelPatch not installed</string>
@@ -160,7 +160,7 @@
     <string name="su_selinux_via_hook">Bypass via hook</string>
     <string name="su_pkg_excluded_label">Exclude</string>
     <string name="su_pkg_excluded_setting_title">Exclude modifications</string>
-    <string name="su_pkg_excluded_setting_summary">Enabling this option will allow FolkPatch to restore any files modified by the modules of this app.</string>
+    <string name="su_pkg_excluded_setting_summary">Enabling this option will allow FolkLite to restore any files modified by the modules of this app.</string>
     <string name="su_show_system_apps">Show system apps</string>
     <string name="su_hide_system_apps">Hide system apps</string>
     <string name="su_refresh">Refresh</string>
@@ -209,7 +209,7 @@
     <string name="apm_start_downloading">Start downloading: %s</string>
     <string name="apm_new_version_available">New version %s is available, click to upgrade.</string>
 
-    <string name="hide_apatch_manager">Hide FolkPatch Manager</string>
+    <string name="hide_apatch_manager">Hide FolkLite Manager</string>
     <string name="hide_apatch_manager_summary">Install a proxy app with a random package ID and custom app label</string>
     <string name="hide_apatch_dialog_new_manager_name">New manager name</string>
     <string name="hide_apatch_dialog_summary">It will be used as the new app label shown in launcher</string>
@@ -241,7 +241,7 @@
     <string name="mode_select_page_install_inactive_slot_warning">Your device will be **FORCED** to boot to the current inactive slot after a reboot!\nOnly use this option after OTA is done.\nContinue?</string>
 
     <string name="home_dialog_auth_fail_title">Authentication failed</string>
-    <string name="home_dialog_auth_fail_content">Unable to authenticate the SuperKey, therefore FolkPatch cannot work properly.\nHere are some possible reasons for authentication failure:\n1. You didn\'t patch the boot.img with KernelPatch.\n2. The patched boot.img wasn\'t flashed.\n3. The SuperKey is wrong or contains special characters.\n4. Your device doesn\'t support FolkPatch and KernelPatch.\n\nPlease check and try again. If there are still issues, you can always ask questions on the official repository\'s issues page.</string>
+    <string name="home_dialog_auth_fail_content">Unable to authenticate the SuperKey, therefore FolkLite cannot work properly.\nHere are some possible reasons for authentication failure:\n1. You didn\'t patch the boot.img with KernelPatch.\n2. The patched boot.img wasn\'t flashed.\n3. The SuperKey is wrong or contains special characters.\n4. Your device doesn\'t support FolkLite and KernelPatch.\n\nPlease check and try again. If there are still issues, you can always ask questions on the official repository\'s issues page.</string>
 
     <string name="home_more_menu_feedback_or_suggestion">Feedback or suggestion</string>
     <string name="home_more_menu_about">About</string>
@@ -315,7 +315,7 @@
     <string name="crash_handle_copied">Crash log copied to clipboard.</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Enable the built-in module mounting system</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Hide Bootloader unlock status to some extent</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>
@@ -373,6 +373,8 @@
     <string name="settings_enable_blur_summary">Blur effect for top bar and navigation bar</string>
     <string name="settings_floating_bottom_bar">Floating bottom bar</string>
     <string name="settings_floating_bottom_bar_summary">Use a floating capsule-style navigation bar</string>
+    <string name="settings_floating_bottom_bar_auto_hide">Auto hide floating bar</string>
+    <string name="settings_floating_bottom_bar_auto_hide_summary">Automatically hide the floating navigation bar after 3 seconds of inactivity</string>
     <string name="settings_enable_liquid_glass">Liquid glass</string>
     <string name="settings_enable_liquid_glass_summary">Glass effects for floating bottom bar</string>
     <string name="settings_section_kernel">Kernel Patch</string>

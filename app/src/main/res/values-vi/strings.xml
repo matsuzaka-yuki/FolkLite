@@ -80,7 +80,7 @@
     <string name="kpm_author">Tác giả</string>
     <string name="apm_not_installed">AndroidPatch chưa được cài đặt</string>
     <string name="su_pkg_excluded_setting_title">Loại trừ các sửa đổi</string>
-    <string name="su_pkg_excluded_setting_summary">Bật tùy chọn này sẽ cho phép FolkPatch khôi phục mọi tệp đã được các mô-đun của ứng dụng này sửa đổi.</string>
+    <string name="su_pkg_excluded_setting_summary">Bật tùy chọn này sẽ cho phép FolkLite khôi phục mọi tệp đã được các mô-đun của ứng dụng này sửa đổi.</string>
     <string name="su_show_system_apps">Hiển thị ứng dụng hệ thống</string>
     <string name="su_hide_system_apps">Ẩn ứng dụng hệ thống</string>
     <string name="su_refresh">Làm mới</string>
@@ -103,7 +103,7 @@
     <string name="settings_show_apm">Hiển thị APM</string>
     <string name="settings_show_kpm">Hiển thị KPM</string>
     <string name="settings_show_superuser">Hiển thị SuperUser</string>
-    <string name="home_apatch_version">Phiên bản FolkPatch</string>
+    <string name="home_apatch_version">Phiên bản FolkLite</string>
     <string name="patch">Bản vá</string>
     <string name="settings_global_namespace_mode">Chế độ Global Namespace</string>
     <string name="settings_global_namespace_mode_summary">Tất cả các phiên Root sử dụng Namespace Mount Global</string>
@@ -114,7 +114,7 @@
     <string name="mode_select_page_select_file">Chọn một boot image để vá</string>
     <string name="home_dialog_auth_fail_title">Xác thực thất bại</string>
     <string name="mode_select_page_install_inactive_slot">Cài đặt vào khe không hoạt động (Sau OTA)</string>
-    <string name="home_dialog_auth_fail_content">Không thể xác thực SuperKey, do đó FolkPatch không thể hoạt động bình thường.\n \nDưới đây là một số lý do có thể dẫn đến lỗi xác thực: \n1. Bạn chưa vá boot image bằng KernelPatch. \n2. Hình ảnh khởi động được vá không được flash. \n3. Super key sai. \n4. Thiết bị của bạn không hỗ trợ FolkPatch và KernelPatch. \n \nVui lòng kiểm tra và thử lại. Nếu vẫn còn vấn đề, bạn luôn có thể đặt câu hỏi trên trang vấn đề của kho lưu trữ chính thức.</string>
+    <string name="home_dialog_auth_fail_content">Không thể xác thực SuperKey, do đó FolkLite không thể hoạt động bình thường.\n \nDưới đây là một số lý do có thể dẫn đến lỗi xác thực: \n1. Bạn chưa vá boot image bằng KernelPatch. \n2. Hình ảnh khởi động được vá không được flash. \n3. Super key sai. \n4. Thiết bị của bạn không hỗ trợ FolkLite và KernelPatch. \n \nVui lòng kiểm tra và thử lại. Nếu vẫn còn vấn đề, bạn luôn có thể đặt câu hỏi trên trang vấn đề của kho lưu trữ chính thức.</string>
     <string name="home_dialog_uninstall_ap_only">Gỡ cài đặt AndroidPatch</string>
     <string name="home_dialog_uninstall_ap_only_desc">Chỉ xóa AndroidPatch và giữ lại trình quản lý.</string>
     <string name="home_dialog_uninstall_all">Gỡ cài đặt tất cả</string>
@@ -182,7 +182,7 @@
     <string name="patch_item_extra_version">Phiên bản:</string>
     <string name="kpm_install">Cài đặt</string>
     <string name="kpm_embed">Nhúng</string>
-    <string name="hide_apatch_manager">Ẩn Trình quản lý FolkPatch</string>
+    <string name="hide_apatch_manager">Ẩn Trình quản lý FolkLite</string>
     <string name="hide_apatch_dialog_new_manager_name">Tên người quản lý mới</string>
     <string name="setting_reset_su_path">Đặt lại đường dẫn su</string>
     <string name="mode_select_page_title">Cài đặt</string>
@@ -235,15 +235,15 @@
     <string name="settings_force_overlayfs_mode">Buộc sử dụng OverlayFS</string>
     <string name="settings_force_overlayfs_mode_summary">Sử dụng OverlayFS để gắn APModules thay vì Magic Mount khi có hỗ trợ kernel. Cần khởi động lại.</string>
     <string name="update_available_title">Có bản cập nhật</string>
-    <string name="update_available_message">Có phiên bản mới của FolkPatch. Cập nhật ngay?</string>
+    <string name="update_available_message">Có phiên bản mới của FolkLite. Cập nhật ngay?</string>
     <string name="update_close">Để sau</string>
     <string name="update_action">Cập nhật ngay</string>
     <string name="unofficial_version_title">Phiên bản không chính thức</string>
-    <string name="unofficial_version_message">Bạn đang sử dụng trình quản lý FolkPatch phiên bản của bên thứ ba, có thể gây thiệt hại tài sản, hãy tải ứng dụng chính thức!</string>
+    <string name="unofficial_version_message">Bạn đang sử dụng trình quản lý FolkLite phiên bản của bên thứ ba, có thể gây thiệt hại tài sản, hãy tải ứng dụng chính thức!</string>
     <string name="go_to_github">Đi đến Github</string>
     <string name="settings_magic_mount">Folk Mount API</string>
     <string name="settings_magic_mount_summary">Bật hệ thống gắn kết mô-đun được tích hợp sẵn</string>
-    <string name="settings_hide_service">FolkPatch Hide</string>
+    <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Ẩn trạng thái mở khóa bootloader ở một mức độ nhất định</string>
     <!-- Umount Service -->
     <string name="settings_umount_service">Zig Umount</string>
