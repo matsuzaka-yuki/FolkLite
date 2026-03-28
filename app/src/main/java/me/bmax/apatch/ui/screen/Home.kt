@@ -204,8 +204,18 @@ fun MainHomeScreen(navigator: DestinationsNavigator) {
                     InfoCard(kpState, apState)
 
                     // About card - can be hidden in settings
-                    val hideAboutCard =
-                        APApplication.sharedPreferences.getBoolean("hide_about_card", false)
+                    var hideAboutCard by remember {
+                        mutableStateOf(APApplication.sharedPreferences.getBoolean("hide_about_card", true))
+                    }
+                    DisposableEffect(Unit) {
+                        val listener = SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+                            if (key == "hide_about_card") {
+                                hideAboutCard = prefs.getBoolean("hide_about_card", true)
+                            }
+                        }
+                        APApplication.sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
+                        onDispose { APApplication.sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener) }
+                    }
                     if (!hideAboutCard) {
                         LearnMoreCard()
                     }

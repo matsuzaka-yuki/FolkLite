@@ -1,5 +1,6 @@
 package me.bmax.apatch.ui.screen
 
+import android.content.SharedPreferences
 import android.os.Build
 import android.system.Os
 import androidx.compose.animation.AnimatedVisibility
@@ -38,6 +39,7 @@ import androidx.compose.material.icons.outlined.Clear
 import androidx.compose.material.icons.outlined.InstallMobile
 import androidx.compose.material.icons.outlined.SystemUpdate
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -148,8 +150,18 @@ fun ListHomeScreen(navigator: DestinationsNavigator) {
                         AStatusCardList(apState)
                     }
                     InfoCardList(kpState, apState)
-                    val hideAboutCard =
-                        APApplication.sharedPreferences.getBoolean("hide_about_card", false)
+                    var hideAboutCard by remember {
+                        mutableStateOf(APApplication.sharedPreferences.getBoolean("hide_about_card", true))
+                    }
+                    DisposableEffect(Unit) {
+                        val listener = SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+                            if (key == "hide_about_card") {
+                                hideAboutCard = prefs.getBoolean("hide_about_card", true)
+                            }
+                        }
+                        APApplication.sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
+                        onDispose { APApplication.sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener) }
+                    }
                     if (!hideAboutCard) {
                         LearnMoreCardList()
                     }

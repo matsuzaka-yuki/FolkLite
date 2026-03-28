@@ -1,5 +1,6 @@
 package me.bmax.apatch.ui.screen
 
+import android.content.SharedPreferences
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,9 @@ import androidx.compose.material.icons.outlined.SystemUpdate
 import androidx.compose.material.icons.rounded.CheckCircleOutline
 import androidx.compose.material.icons.rounded.ErrorOutline
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -106,8 +109,18 @@ fun ClassicHomeScreen(navigator: DestinationsNavigator) {
                         AStatusCardList(apState)
                     }
                     InfoCardList(kpState, apState)
-                    val hideAboutCard =
-                        APApplication.sharedPreferences.getBoolean("hide_about_card", false)
+                    var hideAboutCard by remember {
+                        mutableStateOf(APApplication.sharedPreferences.getBoolean("hide_about_card", true))
+                    }
+                    DisposableEffect(Unit) {
+                        val listener = SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+                            if (key == "hide_about_card") {
+                                hideAboutCard = prefs.getBoolean("hide_about_card", true)
+                            }
+                        }
+                        APApplication.sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
+                        onDispose { APApplication.sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener) }
+                    }
                     if (!hideAboutCard) {
                         LearnMoreCardList()
                     }
