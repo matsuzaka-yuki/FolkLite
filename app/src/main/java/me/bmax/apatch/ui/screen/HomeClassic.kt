@@ -159,18 +159,7 @@ private fun ClassicWorkCard(
         }
     }
 
-    val contentColor = when (kpState) {
-        APApplication.State.KERNELPATCH_INSTALLED -> when {
-            isDark -> Color(0xFFA8DABC)
-            else -> Color(0xFF003920)
-        }
-        APApplication.State.KERNELPATCH_NEED_UPDATE -> colorScheme.onSecondaryContainer
-        APApplication.State.KERNELPATCH_NEED_REBOOT -> colorScheme.onErrorContainer
-        else -> when {
-            isDark -> Color(0xFFE0E0E0)
-            else -> Color(0xFF333333)
-        }
-    }
+    val contentColor = if (isDark) Color.White else Color.Black
 
     val decoIconColor = when (kpState) {
         APApplication.State.KERNELPATCH_INSTALLED -> if (isMonet) {
