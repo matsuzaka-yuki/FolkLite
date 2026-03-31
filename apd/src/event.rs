@@ -13,7 +13,7 @@ use std::{
     fs,
     os::unix::{fs::PermissionsExt, process::CommandExt},
     path::{Path, PathBuf},
-    process::Command,
+    process::{Command, Stdio},
     sync::{Arc, Mutex},
     thread,
     time::Duration,
@@ -40,16 +40,19 @@ pub fn report_kernel(superkey: Option<String>, event: &str, state: &str) -> Resu
 pub fn on_post_data_fs(superkey: Option<String>) -> Result<()> {
     utils::umask(0);
     report_kernel(superkey.clone(), "post-fs-data", "before")?;
-    use std::process::Stdio;
 
-    // Create /data/adb/fp directory for hide and umount binaries
+    // Create /data/adb/fp/bin directory for fpd binary
     let fp_dir = Path::new("/data/adb/fp");
-    if !fp_dir.exists() {
-        fs::create_dir_all(fp_dir).with_context(|| "Failed to create /data/adb/fp directory")?;
+    let fp_bin_dir = Path::new("/data/adb/fp/bin");
+    if !fp_bin_dir.exists() {
+        fs::create_dir_all(fp_bin_dir)
+            .with_context(|| "Failed to create /data/adb/fp/bin directory")?;
         let permissions = fs::Permissions::from_mode(0o755);
-        fs::set_permissions(fp_dir, permissions)
+        fs::set_permissions(fp_dir, permissions.clone())
             .with_context(|| "Failed to set permissions for /data/adb/fp")?;
-        info!("Created directory: /data/adb/fp");
+        fs::set_permissions(fp_bin_dir, permissions)
+            .with_context(|| "Failed to set permissions for /data/adb/fp/bin")?;
+        info!("Created directory: /data/adb/fp/bin");
     }
 
     init_load_su_path(&superkey);
@@ -198,56 +201,29 @@ pub fn on_post_data_fs(superkey: Option<String>) -> Result<()> {
 
     // Execute Hide Service if enabled
     if Path::new(defs::HIDE_SERVICE_FILE).exists() {
-        info!("Hide Service enabled, executing hide binary...");
+        info!("Hide Service enabled, executing fpd -hide...");
         if Path::new(defs::HIDE_BINARY_PATH).exists() {
-            let result = Command::new(defs::HIDE_BINARY_PATH).status();
+            let result = Command::new(defs::HIDE_BINARY_PATH).arg("-hide").status();
             match result {
                 Ok(status) => {
                     if status.success() {
-                        info!("Hide binary executed successfully");
+                        info!("fpd -hide executed successfully");
                     } else {
-                        warn!("Hide binary exited with status: {:?}", status.code());
+                        warn!("fpd -hide exited with status: {:?}", status.code());
                     }
                 }
                 Err(e) => {
-                    warn!("Failed to execute hide binary: {}", e);
+                    warn!("Failed to execute fpd -hide: {}", e);
                 }
             }
         } else {
             warn!(
-                "Hide binary not found at {}, please copy it manually",
+                "fpd binary not found at {}, please copy it manually",
                 defs::HIDE_BINARY_PATH
             );
         }
     } else {
         info!("Hide Service disabled");
-    }
-
-    // Execute Umount Service if enabled
-    if Path::new(defs::UMOUNT_SERVICE_FILE).exists() {
-        info!("Umount Service enabled, executing umount binary...");
-        if Path::new(defs::UMOUNT_BINARY_PATH).exists() {
-            let result = Command::new(defs::UMOUNT_BINARY_PATH).status();
-            match result {
-                Ok(status) => {
-                    if status.success() {
-                        info!("Umount binary executed successfully");
-                    } else {
-                        warn!("Umount binary exited with status: {:?}", status.code());
-                    }
-                }
-                Err(e) => {
-                    warn!("Failed to execute umount binary: {}", e);
-                }
-            }
-        } else {
-            warn!(
-                "Umount binary not found at {}, please copy it manually",
-                defs::UMOUNT_BINARY_PATH
-            );
-        }
-    } else {
-        info!("Umount Service disabled");
     }
 
     // exec modules post-fs-data scripts
@@ -340,6 +316,54 @@ pub fn on_boot_completed(superkey: Option<String>) -> Result<()> {
     info!("on_boot_completed triggered!");
 
     run_stage("boot-completed", superkey, false);
+
+    // Execute Umount Service if enabled
+    // Run at boot-completed (latest possible stage) to ensure all mount
+    // points — including those created by system_server and Zygote hooks
+    // (e.g. ReZygisk module.prop bind mounts) — are fully established.
+    if Path::new(defs::UMOUNT_SERVICE_FILE).exists() {
+        info!("Umount Service enabled, executing fpd -umount...");
+        if Path::new(defs::UMOUNT_BINARY_PATH).exists() {
+            let result = unsafe {
+                Command::new(defs::UMOUNT_BINARY_PATH)
+                    .arg("-umount")
+                    .stdout(Stdio::piped())
+                    .stderr(Stdio::piped())
+                    .pre_exec(|| {
+                        let _ = utils::switch_mnt_ns(1);
+                        Ok(())
+                    })
+                    .output()
+            };
+            match result {
+                Ok(output) => {
+                    let stdout = String::from_utf8_lossy(&output.stdout);
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    if output.status.success() {
+                        info!("fpd -umount executed successfully");
+                    } else {
+                        warn!("fpd -umount exited with status: {:?}", output.status.code());
+                    }
+                    if !stdout.trim().is_empty() {
+                        info!("fpd -umount stdout: {}", stdout.trim());
+                    }
+                    if !stderr.trim().is_empty() {
+                        info!("fpd -umount stderr: {}", stderr.trim());
+                    }
+                }
+                Err(e) => {
+                    warn!("Failed to execute fpd -umount: {}", e);
+                }
+            }
+        } else {
+            warn!(
+                "fpd binary not found at {}, please copy it manually",
+                defs::UMOUNT_BINARY_PATH
+            );
+        }
+    } else {
+        info!("Umount Service disabled");
+    }
 
     run_uid_monitor();
     Ok(())

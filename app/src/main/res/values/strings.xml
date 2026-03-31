@@ -322,7 +322,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Hide Bootloader unlock status to some extent</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">Configure mount points to auto-unmount at boot</string>
     <string name="umount_config_title">Umount Configuration</string>
     <string name="umount_config_enabled">Enable Umount</string>

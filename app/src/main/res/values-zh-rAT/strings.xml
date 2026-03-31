@@ -279,7 +279,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">以圣光遮蔽Bootloader解锁状态</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">配置祷告自动卸载的神圣连接点</string>
     <string name="umount_config_title">Umount 圣言</string>
     <string name="umount_config_enabled">启用 Umount</string>

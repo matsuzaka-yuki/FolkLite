@@ -275,7 +275,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">一定程度上隐藏Bootloader锁解锁状态</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">配置开机自动卸载的挂载点</string>
     <string name="umount_config_title">Umount 配置</string>
     <string name="umount_config_enabled">启用 Umount</string>

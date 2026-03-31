@@ -250,7 +250,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Ẩn trạng thái mở khóa bootloader ở một mức độ nhất định</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">Cấu hình điểm mount để tự động unmount khi khởi động</string>
     <string name="umount_config_title">Cấu hình Umount</string>
     <string name="umount_config_enabled">Bật Umount</string>

@@ -92,7 +92,6 @@ import me.bmax.apatch.ui.component.FloatingBottomBarItem
 import me.bmax.apatch.ui.component.rememberConfirmCallback
 import me.bmax.apatch.ui.component.rememberConfirmDialog
 import me.bmax.apatch.ui.component.rememberLoadingDialog
-import me.bmax.apatch.ui.component.SignatureVerifyDialog
 import me.bmax.apatch.ui.component.UpdateDialog
 import me.bmax.apatch.ui.screen.BottomBarDestination
 import me.bmax.apatch.ui.screen.MainScreen
@@ -425,11 +424,6 @@ class MainActivity : AppCompatActivity() {
                                 ),
                         )
                     } // end Scaffold content
-
-                // Signature verify dialog
-                if (!APApplication.isSignatureValid) {
-                    SignatureVerifyDialog()
-                }
 
                 // Update dialog
                 if (showUpdateDialog) {

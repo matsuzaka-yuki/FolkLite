@@ -247,7 +247,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">إخفاء حالة فتح قفل محمل الإقلاع إلى حد ما</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">تكوين نقاط التثبيت للإلغاء التلقائي عند التشغيل</string>
     <string name="umount_config_title">تكوين Umount</string>
     <string name="umount_config_enabled">تفعيل Umount</string>

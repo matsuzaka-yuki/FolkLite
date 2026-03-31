@@ -277,7 +277,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Bootloader Unlock 状態をある程度非表示にします。</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">起動時に自動アンマウントするマウントポイントを構成します。</string>
     <string name="umount_config_title">アンマウントの構成</string>
     <string name="umount_config_enabled">アンマウントを有効化</string>

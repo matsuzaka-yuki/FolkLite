@@ -248,7 +248,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Скрывать статус разблокировки загрузчика в некоторой степени</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">Настройка точек монтирования для автоматического отключения при загрузке</string>
     <string name="umount_config_title">Настройка Umount</string>
     <string name="umount_config_enabled">Включить Umount</string>

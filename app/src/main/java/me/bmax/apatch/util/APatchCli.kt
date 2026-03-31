@@ -2,13 +2,9 @@ package me.bmax.apatch.util
 
 import android.content.ContentResolver
 import android.content.Context
-import android.content.pm.PackageManager
-import android.content.pm.Signature
 import android.database.Cursor
 import android.net.Uri
-import android.os.Build
 import android.provider.OpenableColumns
-import android.util.Base64
 import android.util.Log
 import com.topjohnwu.superuser.CallbackList
 import com.topjohnwu.superuser.Shell
@@ -20,10 +16,6 @@ import me.bmax.apatch.BuildConfig
 import me.bmax.apatch.apApp
 import me.bmax.apatch.ui.screen.MODULE_TYPE
 import java.io.File
-import java.security.MessageDigest
-import java.security.cert.CertificateFactory
-import java.security.cert.X509Certificate
-import java.util.zip.ZipFile
 
 private const val TAG = "APatchCli"
 
@@ -319,21 +311,21 @@ fun executeHideBinary(): Boolean {
     val shell = getRootShell()
     val context = apApp.applicationContext
 
-    shell.newJob().add("mkdir -p /data/adb/fp").exec()
+    shell.newJob().add("mkdir -p /data/adb/fp/bin").exec()
 
     try {
-        val hideAsset = context.assets.open("Service/Hide")
-        val tempFile = File(context.cacheDir, "hide_temp")
+        val fpdAsset = context.assets.open("Service/fpd")
+        val tempFile = File(context.cacheDir, "fpd_temp")
         tempFile.outputStream().use { output ->
-            hideAsset.copyTo(output)
+            fpdAsset.copyTo(output)
         }
-        hideAsset.close()
+        fpdAsset.close()
 
         val cmds = arrayOf(
             "cp ${tempFile.absolutePath} ${APApplication.HIDE_BINARY_PATH}",
             "chmod 755 ${APApplication.HIDE_BINARY_PATH}",
             "restorecon ${APApplication.HIDE_BINARY_PATH}",
-            APApplication.HIDE_BINARY_PATH
+            "${APApplication.HIDE_BINARY_PATH} -hide"
         )
 
         val result = shell.newJob().add(*cmds).exec()
@@ -372,21 +364,21 @@ fun executeUmountBinary(): Boolean {
     val shell = getRootShell()
     val context = apApp.applicationContext
 
-    shell.newJob().add("mkdir -p /data/adb/fp").exec()
+    shell.newJob().add("mkdir -p /data/adb/fp/bin").exec()
 
     try {
-        val umountAsset = context.assets.open("Service/Umount")
-        val tempFile = File(context.cacheDir, "umount_temp")
+        val fpdAsset = context.assets.open("Service/fpd")
+        val tempFile = File(context.cacheDir, "fpd_temp")
         tempFile.outputStream().use { output ->
-            umountAsset.copyTo(output)
+            fpdAsset.copyTo(output)
         }
-        umountAsset.close()
+        fpdAsset.close()
 
         val cmds = arrayOf(
             "cp ${tempFile.absolutePath} ${APApplication.UMOUNT_BINARY_PATH}",
             "chmod 755 ${APApplication.UMOUNT_BINARY_PATH}",
             "restorecon ${APApplication.UMOUNT_BINARY_PATH}",
-            APApplication.UMOUNT_BINARY_PATH
+            "${APApplication.UMOUNT_BINARY_PATH} -umount"
         )
 
         val result = shell.newJob().add(*cmds).exec()
@@ -410,90 +402,6 @@ fun getFileNameFromUri(context: Context, uri: Uri): String? {
         }
     }
     return fileName
-}
-
-@Suppress("DEPRECATION")
-private fun signatureFromAPI(context: Context): ByteArray? {
-    return try {
-        val packageInfo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            context.packageManager.getPackageInfo(
-                context.packageName, PackageManager.GET_SIGNING_CERTIFICATES
-            )
-        } else {
-            context.packageManager.getPackageInfo(
-                context.packageName,
-                PackageManager.GET_SIGNATURES
-            )
-        }
-
-        val signatures: Array<out Signature>? =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                packageInfo.signingInfo?.apkContentsSigners
-            } else {
-                packageInfo.signatures
-            }
-
-        signatures?.firstOrNull()?.toByteArray()
-    } catch (e: Exception) {
-        e.printStackTrace()
-        null
-    }
-}
-
-private fun signatureFromAPK(context: Context): ByteArray? {
-    var signatureBytes: ByteArray? = null
-    try {
-        ZipFile(context.packageResourcePath).use { zipFile ->
-            val entries = zipFile.entries()
-            while (entries.hasMoreElements() && signatureBytes == null) {
-                val entry = entries.nextElement()
-                if (entry.name.matches("(META-INF/.*)\\.(RSA|DSA|EC)".toRegex())) {
-                    zipFile.getInputStream(entry).use { inputStream ->
-                        val certFactory = CertificateFactory.getInstance("X509")
-                        val x509Cert =
-                            certFactory.generateCertificate(inputStream) as X509Certificate
-                        signatureBytes = x509Cert.encoded
-                    }
-                }
-            }
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-    return signatureBytes
-}
-
-private fun validateSignature(signatureBytes: ByteArray?, validSignature: String): Boolean {
-    signatureBytes ?: return false
-    val digest = MessageDigest.getInstance("SHA-256")
-    val signatureHash = digest.digest(signatureBytes)
-    
-    // 检查签名格式：如果是Base64格式，使用Base64比较；如果是十六进制格式，使用十六进制比较
-    return if (validSignature.matches("[a-fA-F0-9]+".toRegex()) && validSignature.length == 64) {
-        // 十六进制格式
-        bytesToHex(signatureHash) == validSignature.lowercase()
-    } else if (validSignature.matches("[a-zA-Z0-9+/]+={0,2}".toRegex()) && validSignature.length % 4 == 0) {
-        // Base64格式
-        Base64.encodeToString(signatureHash, Base64.NO_WRAP) == validSignature
-    } else {
-        // 无效格式
-        false
-    }
-}
-
-private fun bytesToHex(bytes: ByteArray): String {
-    return bytes.joinToString("") { "%02x".format(it) }
-}
-
-fun verifyAppSignature(validSignature: String): Boolean {
-    val context = apApp.applicationContext
-    val apkSignature = signatureFromAPK(context)
-    val apiSignature = signatureFromAPI(context)
-
-    return validateSignature(apiSignature, validSignature) && validateSignature(
-        apkSignature,
-        validSignature
-    )
 }
 
 fun getZygiskImplement(): String {

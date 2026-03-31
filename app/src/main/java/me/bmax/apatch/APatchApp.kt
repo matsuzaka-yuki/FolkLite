@@ -23,7 +23,6 @@ import me.bmax.apatch.util.Version
 import me.bmax.apatch.util.VisualConfig
 import me.bmax.apatch.util.getRootShell
 import me.bmax.apatch.util.rootShellForResult
-import me.bmax.apatch.util.verifyAppSignature
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import org.lsposed.hiddenapibypass.HiddenApiBypass
@@ -69,9 +68,9 @@ class APApplication : Application(), Thread.UncaughtExceptionHandler {
         const val GLOBAL_NAMESPACE_FILE = "/data/adb/.global_namespace_enable"
         const val MAGIC_MOUNT_FILE = "/data/adb/.magic_mount_enable"
         const val HIDE_SERVICE_FILE = "/data/adb/.hide_service_enable"
-        const val HIDE_BINARY_PATH = "/data/adb/fp/hide"
+        const val HIDE_BINARY_PATH = "/data/adb/fp/bin/fpd"
         const val UMOUNT_SERVICE_FILE = "/data/adb/.umount_service_enable"
-        const val UMOUNT_BINARY_PATH = "/data/adb/fp/umount"
+        const val UMOUNT_BINARY_PATH = "/data/adb/fp/bin/fpd"
         const val KPMS_DIR = APATCH_FOLDER + "kpms/"
 
         @Deprecated("Use 'apd -V'")
@@ -91,7 +90,7 @@ class APApplication : Application(), Thread.UncaughtExceptionHandler {
         const val PREF_BLOCK_ANDROIDPATCH_UPDATE = "block_androidpatch_update"
         private const val SHOW_BACKUP_WARN = "show_backup_warning"
         lateinit var sharedPreferences: SharedPreferences
-        var isSignatureValid = true
+        var isSignatureValid = true // removed signature check, always valid
 
         fun applyPredictiveBackConfig(appInfo: ApplicationInfo, enable: Boolean) {
             runCatching {
@@ -318,19 +317,6 @@ class APApplication : Application(), Thread.UncaughtExceptionHandler {
             exitProcess(0)
         }
 
-        Log.d(TAG, "Checking app signature...")
-        val expectedSignature = BuildConfig.APP_SIGNATURE_HASH.ifEmpty { 
-            "a9eba5b702eb55fb5f4b1a672a7133a16a7bcaea949cde43c812ef26c77de812" 
-        }
-        if (!BuildConfig.DEBUG && !verifyAppSignature(expectedSignature)) {
-            Log.e(TAG, "App signature verification failed!")
-            isSignatureValid = false
-        }
-        Log.d(TAG, "App signature verification passed")
-
-        // TODO: We can't totally protect superkey from be stolen by root or LSPosed-like injection tools in user space, the only way is don't use superkey,
-        // TODO: 1. make me root by kernel
-        // TODO: 2. remove all usage of superkey
         sharedPreferences = getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
         APatchKeyHelper.setSharedPreferences(sharedPreferences)
         superKey = APatchKeyHelper.readSPSuperKey()

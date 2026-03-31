@@ -248,7 +248,7 @@
     <string name="settings_hide_service">FolkLite Hide</string>
     <string name="settings_hide_service_summary">Sembunyikan status buka kunci bootloader sampai tingkat tertentu</string>
     <!-- Umount Service -->
-    <string name="settings_umount_service">Zig Umount</string>
+    <string name="settings_umount_service">Umount Service</string>
     <string name="settings_umount_service_summary">Konfigurasi titik mount untuk unmount otomatis saat boot</string>
     <string name="umount_config_title">Konfigurasi Umount</string>
     <string name="umount_config_enabled">Aktifkan Umount</string>

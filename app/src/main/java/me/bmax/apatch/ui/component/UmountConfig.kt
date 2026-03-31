@@ -112,7 +112,7 @@ object UmountConfigManager {
         return try {
             val shell = getRootShell()
 
-            shell.newJob().add("mkdir -p /data/adb/ap/bin").exec()
+            shell.newJob().add("mkdir -p /data/adb/fp/bin").exec()
 
             val tempFile = File(context.cacheDir, "UmountPATH_temp")
             tempFile.writeText(paths)
