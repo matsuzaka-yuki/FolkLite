@@ -3,13 +3,17 @@ package me.bmax.apatch.ui.screen
 import android.net.Uri
 import android.os.Environment
 import android.widget.Toast
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -169,10 +173,18 @@ private fun TopBar(onBack: () -> Unit = {}, onSave: () -> Unit = {}) {
             IconButton(
                 onClick = onBack
             ) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null) }
-        }, actions = {
-            IconButton(onClick = onSave) {
+        },         actions = {
+            IconButton(
+                modifier = Modifier
+                    .size(32.dp)
+                    .border(1.dp, MiuixTheme.colorScheme.primary, CircleShape)
+                    .background(MiuixTheme.colorScheme.surface, CircleShape),
+                onClick = onSave
+            ) {
                 Icon(
-                    imageVector = Icons.Filled.Save, contentDescription = "Localized description"
+                    imageVector = Icons.Filled.Save,
+                    contentDescription = "Save log",
+                    tint = MiuixTheme.colorScheme.primary
                 )
             }
         })
