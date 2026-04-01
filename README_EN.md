@@ -1,7 +1,7 @@
 <div align="center">
 <img src='logo.png' width='500px' alt="FolkLite logo">
 
-[![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/FolkLite?label=Release&logo=github)](https://github.com/matsuzaka-yuki/FolkLite/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/FolkLite?label=Release&logo=github)](https://github.com/LyraVoid/FolkLite/releases/latest)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/FolkPatch)
 [![GitHub License](https://img.shields.io/github/license/matsuzaka-yuki/FolkPatch?logo=gnu)](/LICENSE)
 
@@ -73,7 +73,7 @@ FolkLite is a MIUIX lightweight branch of FolkPatch, focused on delivering a ref
 ### 📦 Installation Guide
 
 1. **Download & Install:**
-   Download the latest installation package from the [Releases page](https://github.com/matsuzaka-yuki/FolkLite/releases/latest)
+   Download the latest installation package from the [Releases page](https://github.com/LyraVoid/FolkLite/releases/latest)
 
 2. **Install App:**
    Install the latest installation package to your Android device
@@ -86,7 +86,7 @@ FolkLite is a MIUIX lightweight branch of FolkPatch, focused on delivering a ref
 This project is based on the following open source projects:
 
 - [KernelPatch](https://github.com/bmax121/KernelPatch/) - Core component
-- [FolkPatch](https://github.com/matsuzaka-yuki/FolkPatch/) - Upstream project
+- [FolkPatch](https://github.com/LyraVoid/FolkPatch/) - Upstream project
 - [MIUIX](https://github.com/YuKongA/miuix) - MIUI/HyperOS design component library
 - [KernelSU](https://github.com/tiann/KernelSU) - App UI and Magisk-like module support
 - [APatch](https://github.com/bmax121/APatch) - Upstream branch

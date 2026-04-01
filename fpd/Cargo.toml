@@ -3,7 +3,7 @@ name = "fpd"
 version = "1.0.0"
 edition = "2024"
 description = "Android system property patching and mount-point unmounting utility"
-repository = "https://github.com/matsuzaka-yuki/FolkPatch"
+repository = "https://github.com/LyraVoid/FolkPatch"
 license = "MIT"
 
 [dependencies]

@@ -1,7 +1,7 @@
 <div align="center">
 <img src='logo.png' width='500px' alt="FolkLite logo">
 
-[![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/FolkLite?label=Release&logo=github)](https://github.com/matsuzaka-yuki/FolkLite/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/matsuzaka-yuki/FolkLite?label=Release&logo=github)](https://github.com/LyraVoid/FolkLite/releases/latest)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/FolkPatch)
 [![GitHub License](https://img.shields.io/github/license/matsuzaka-yuki/FolkPatch?logo=gnu)](/LICENSE)
 
@@ -73,7 +73,7 @@ FolkLite は FolkPatch の MIUIX 軽量ブランチです。洗練された MIUI
 ### 📦 インストールガイド
 
 1. **ダウンロードとインストール:**
-   [リリースページ](https://github.com/matsuzaka-yuki/FolkLite/releases/latest)から最新のインストールパッケージをダウンロード
+   [リリースページ](https://github.com/LyraVoid/FolkLite/releases/latest)から最新のインストールパッケージをダウンロード
 
 2. **アプリをインストール:**
    最新のインストールパッケージをあなたの Android デバイスにインストール
@@ -86,7 +86,7 @@ FolkLite は FolkPatch の MIUIX 軽量ブランチです。洗練された MIUI
 このプロジェクトは以下のオープンソースプロジェクトに基づいています:
 
 - [KernelPatch](https://github.com/bmax121/KernelPatch/) - コアコンポーネント
-- [FolkPatch](https://github.com/matsuzaka-yuki/FolkPatch/) - アップストリームプロジェクト
+- [FolkPatch](https://github.com/LyraVoid/FolkPatch/) - アップストリームプロジェクト
 - [MIUIX](https://github.com/YuKongA/miuix) - MIUI/HyperOS デザインコンポーネントライブラリ
 - [KernelSU](https://github.com/tiann/KernelSU) - アプリ UI と Magisk ライクなモジュールサポート
 - [APatch](https://github.com/bmax121/APatch) - 上流ブランチ

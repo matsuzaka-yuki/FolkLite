@@ -65,7 +65,7 @@ fun checkNewVersion(): LatestVersionInfo {
                 val body = response.body?.string() ?: return defaultValue
                 val versionCode = body.trim().toIntOrNull() ?: return defaultValue
 
-                val downloadUrl = "https://github.com/matsuzaka-yuki/FolkLite/releases"
+                val downloadUrl = "https://github.com/LyraVoid/FolkLite/releases"
 
                 return LatestVersionInfo(versionCode, downloadUrl, "")
             }
