@@ -20,7 +20,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import me.bmax.apatch.ui.viewmodel.PatchesViewModel
+import me.bmax.apatch.util.cacheToLocalFile
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
@@ -205,7 +208,11 @@ fun AModuleTabNavHost(
     LaunchedEffect(externalEvent) {
         when (externalEvent) {
             is ExternalNavEvent.InstallApk -> {
-                navigator.navigate("install_apm/${Uri.encode(externalEvent.uri.toString())}/APM")
+                val cachedFile = withContext(Dispatchers.IO) {
+                    externalEvent.uri.cacheToLocalFile()
+                }
+                val installUri = if (cachedFile != null) Uri.fromFile(cachedFile) else externalEvent.uri
+                navigator.navigate("install_apm/${Uri.encode(installUri.toString())}/APM")
                 onExternalNavConsumed()
             }
             is ExternalNavEvent.ExecuteAction -> {

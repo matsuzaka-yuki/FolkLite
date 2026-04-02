@@ -102,6 +102,7 @@ import me.bmax.apatch.ui.theme.LocalBottomBarVisible
 import me.bmax.apatch.ui.theme.LocalEnableFloatingBottomBar
 import me.bmax.apatch.ui.viewmodel.APModuleViewModel
 import me.bmax.apatch.util.DownloadListener
+import me.bmax.apatch.util.cacheToLocalFile
 import me.bmax.apatch.util.download
 import me.bmax.apatch.util.hasMagisk
 import me.bmax.apatch.util.toggleModule
@@ -183,6 +184,7 @@ fun APModuleScreen(navigator: TabNavigator) {
     val hideInstallButton = isSafeMode || hasMagisk
 
     val moduleListState = rememberLazyListState()
+    val scope = rememberCoroutineScope()
 
     Scaffold(
         topBar = {
@@ -228,27 +230,33 @@ fun APModuleScreen(navigator: TabNavigator) {
                     Log.i("ModuleScreen", "select zip result: $uri")
 
                     val prefs = APApplication.sharedPreferences
-                    if (prefs.getBoolean("apm_install_confirm_enabled", true)) {
-                        pendingInstallUri = uri
-                        val fileName = try {
-                            var name = uri.path ?: "Module"
-                            context.contentResolver.query(uri, null, null, null, null)?.use { cursor ->
-                                val nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
-                                if (cursor.moveToFirst() && nameIndex >= 0) {
-                                    name = cursor.getString(nameIndex)
-                                }
-                            }
-                            name
-                        } catch (e: Exception) {
-                            "Module"
+                    scope.launch {
+                        val cachedFile = withContext(Dispatchers.IO) {
+                            uri.cacheToLocalFile()
                         }
-                        installConfirmDialog.showConfirm(
-                            title = context.getString(R.string.apm_install_confirm_title),
-                            content = context.getString(R.string.apm_install_confirm_content, fileName)
-                        )
-                    } else {
-                        navigator.navigate("install_apm/${android.net.Uri.encode(uri.toString())}/APM")
-                        viewModel.markNeedRefresh()
+                        val installUri = if (cachedFile != null) Uri.fromFile(cachedFile) else uri
+                        if (prefs.getBoolean("apm_install_confirm_enabled", true)) {
+                            pendingInstallUri = installUri
+                            val fileName = cachedFile?.name ?: try {
+                                var name = uri.path ?: "Module"
+                                context.contentResolver.query(uri, null, null, null, null)?.use { cursor ->
+                                    val nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+                                    if (cursor.moveToFirst() && nameIndex >= 0) {
+                                        name = cursor.getString(nameIndex)
+                                    }
+                                }
+                                name
+                            } catch (e: Exception) {
+                                "Module"
+                            }
+                            installConfirmDialog.showConfirm(
+                                title = context.getString(R.string.apm_install_confirm_title),
+                                content = context.getString(R.string.apm_install_confirm_content, fileName)
+                            )
+                        } else {
+                            navigator.navigate("install_apm/${android.net.Uri.encode(installUri.toString())}/APM")
+                            viewModel.markNeedRefresh()
+                        }
                     }
                 }
 
@@ -314,7 +322,13 @@ fun APModuleScreen(navigator: TabNavigator) {
                         .fillMaxSize(),
                     state = moduleListState,
                     onInstallModule = {
-                        navigator.navigate("install_apm/${android.net.Uri.encode(it.toString())}/APM")
+                        scope.launch {
+                            val cachedFile = withContext(Dispatchers.IO) {
+                                it.cacheToLocalFile()
+                            }
+                            val installUri = if (cachedFile != null) Uri.fromFile(cachedFile) else it
+                            navigator.navigate("install_apm/${android.net.Uri.encode(installUri.toString())}/APM")
+                        }
                     },
                     onClickModule = { id, name, hasWebUi ->
                         if (hasWebUi) {

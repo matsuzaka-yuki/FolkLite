@@ -185,42 +185,54 @@ fun installModule(
     uri: Uri, type: MODULE_TYPE, onFinish: (Boolean) -> Unit, onStdout: (String) -> Unit, onStderr: (String) -> Unit
 ): Boolean {
     val resolver = apApp.contentResolver
-    with(resolver.openInputStream(uri)) {
-        val file = File(apApp.cacheDir, "module_$type.zip")
-        file.outputStream().use { output ->
-            this?.copyTo(output)
-        }
-
-        val stdoutCallback: CallbackList<String?> = object : CallbackList<String?>() {
-            override fun onAddElement(s: String?) {
-                onStdout(s ?: "")
+    val file = File(apApp.cacheDir, "module_$type.zip")
+    try {
+        with(resolver.openInputStream(uri)) {
+            file.outputStream().use { output ->
+                this?.copyTo(output)
             }
         }
-
-        val stderrCallback: CallbackList<String?> = object : CallbackList<String?>() {
-            override fun onAddElement(s: String?) {
-                onStderr(s ?: "")
-            }
-        }
-
-        val shell = getRootShell()
-
-        var result = false
-        if(type == MODULE_TYPE.APM) {
-            val cmd = "${APApplication.APD_PATH} module install ${file.absolutePath}"
-            result = shell.newJob().add(cmd).to(stdoutCallback, stderrCallback)
-                    .exec().isSuccess
+    } catch (e: SecurityException) {
+        Log.e(TAG, "Permission denied reading URI: $uri, falling back to cached copy", e)
+        val cachedFile = uri.cacheToLocalFile()
+        if (cachedFile != null) {
+            cachedFile.copyTo(file, overwrite = true)
         } else {
-//            ZipUtils.
+            onStderr("Failed to read module file: permission denied\n")
+            onFinish(false)
+            return false
         }
-
-        Log.i(TAG, "install $type module $uri result: $result")
-
-        file.delete()
-
-        onFinish(result)
-        return result
     }
+
+    val stdoutCallback: CallbackList<String?> = object : CallbackList<String?>() {
+        override fun onAddElement(s: String?) {
+            onStdout(s ?: "")
+        }
+    }
+
+    val stderrCallback: CallbackList<String?> = object : CallbackList<String?>() {
+        override fun onAddElement(s: String?) {
+            onStderr(s ?: "")
+        }
+    }
+
+    val shell = getRootShell()
+
+    var result = false
+    if(type == MODULE_TYPE.APM) {
+        val cmd = "${APApplication.APD_PATH} module install ${file.absolutePath}"
+        result = shell.newJob().add(cmd).to(stdoutCallback, stderrCallback)
+                    .exec().isSuccess
+    } else {
+//            ZipUtils.
+    }
+
+    Log.i(TAG, "install $type module $uri result: $result")
+
+    file.delete()
+
+    onFinish(result)
+    return result
 }
 
 fun runAPModuleAction(

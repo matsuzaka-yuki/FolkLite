@@ -74,6 +74,7 @@ import me.bmax.apatch.ui.theme.LocalEnableFloatingBottomBar
 import me.bmax.apatch.ui.viewmodel.KPModel
 import me.bmax.apatch.ui.viewmodel.KPModuleViewModel
 import me.bmax.apatch.ui.viewmodel.PatchesViewModel
+import me.bmax.apatch.util.cacheToLocalFile
 import me.bmax.apatch.util.inputStream
 import me.bmax.apatch.util.writeTo
 import top.yukonga.miuix.kmp.basic.ButtonDefaults
@@ -159,7 +160,13 @@ fun KPModuleScreen(navigator: TabNavigator) {
                 val data = it.data ?: return@rememberLauncherForActivityResult
                 val uri = data.data ?: return@rememberLauncherForActivityResult
                 Log.i(TAG, "select zip result: $uri")
-                navigator.navigate("install_kpm/${android.net.Uri.encode(uri.toString())}/KPM")
+                scope.launch {
+                    val cachedFile = withContext(Dispatchers.IO) {
+                        uri.cacheToLocalFile()
+                    }
+                    val installUri = if (cachedFile != null) Uri.fromFile(cachedFile) else uri
+                    navigator.navigate("install_kpm/${android.net.Uri.encode(installUri.toString())}/KPM")
+                }
             }
 
             val selectKpmLauncher = rememberLauncherForActivityResult(
@@ -170,7 +177,11 @@ fun KPModuleScreen(navigator: TabNavigator) {
                 val uri = data.data ?: return@rememberLauncherForActivityResult
 
                 scope.launch {
-                    val rc = loadModule(loadingDialog, uri, "") == 0
+                    val cachedFile = withContext(Dispatchers.IO) {
+                        uri.cacheToLocalFile()
+                    }
+                    val loadUri = if (cachedFile != null) Uri.fromFile(cachedFile) else uri
+                    val rc = loadModule(loadingDialog, loadUri, "") == 0
                     val toastText = if (rc) successToastText else failToastText
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show()

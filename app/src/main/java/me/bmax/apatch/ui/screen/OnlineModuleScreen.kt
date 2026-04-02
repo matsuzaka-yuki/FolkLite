@@ -17,9 +17,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import me.bmax.apatch.ui.screen.TabNavigator
 import me.bmax.apatch.R
 import me.bmax.apatch.ui.viewmodel.OnlineModuleViewModel
+import me.bmax.apatch.util.cacheToLocalFile
 import me.bmax.apatch.util.download
 import me.bmax.apatch.util.DownloadListener
 import top.yukonga.miuix.kmp.basic.Card
@@ -136,8 +140,15 @@ fun OnlineModuleScreen(
 
         // Only APM modules need to navigate to install screen after download
         if (moduleType == "apm") {
+            val scope = rememberCoroutineScope()
             DownloadListener(context) { uri ->
-                navigator.navigate("install_apm/${Uri.encode(uri.toString())}/APM")
+                scope.launch {
+                    val cachedFile = withContext(Dispatchers.IO) {
+                        uri.cacheToLocalFile()
+                    }
+                    val installUri = if (cachedFile != null) Uri.fromFile(cachedFile) else uri
+                    navigator.navigate("install_apm/${Uri.encode(installUri.toString())}/APM")
+                }
             }
         }
     }
